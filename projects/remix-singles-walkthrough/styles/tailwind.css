@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "./sp-tw-props.css";
+@import "./sp-reset.css";
+@import "./sp-tw-normalize.css";
+
+@import "tailwindcss/components";
+@import "./sp-tw-layout.css";
+
+@import "tailwindcss/utilities";

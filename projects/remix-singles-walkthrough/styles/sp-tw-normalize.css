@@ -1,0 +1,321 @@
+/* ### COLORS ### */
+:where(html) {
+    --primary: theme(colors.sky.600);
+    --secondary: theme(colors.slate.500);
+    --background: theme(colors.neutral.200);
+    --on-background: theme(colors.neutral.700);
+    --surface: theme(colors.neutral.300);
+    --on-surface: theme(colors.neutral.900);
+    --surface-1: theme(colors.sky.600 / 5%);
+    --surface-2: theme(colors.sky.600 / 8%);
+    --surface-3: theme(colors.sky.600 / 11%);
+    --surface-4: theme(colors.sky.600 / 12%);
+    --surface-5: theme(colors.sky.600 / 14%);
+}
+
+:where(html) {
+    font-family: theme(fontFamily.sans);
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+    color: var(--on-background);
+    background-color: var(--background);
+    caret-color: var(--primary);
+    accent-color: var(--primary);
+}
+
+/* ### TYPOGRAPHY ### */
+:where(h1, h2, h3, h4, h5, h6, dt) {
+    color: theme(colors.neutral.800);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+    font-weight: theme(fontWeight.black);
+    line-height: theme(lineHeight.2);
+}
+
+:where(h1) {
+    font-size: theme(fontSize.7);
+    max-inline-size: theme(headerWidth.1);
+}
+:where(h2) {
+    font-size: theme(fontSize.5);
+    max-inline-size: theme(headerWidth.2);
+}
+:where(h3) {
+    font-size: theme(fontSize.4);
+}
+:where(h4) {
+    font-size: theme(fontSize.3);
+}
+:where(h5) {
+    font-size: theme(fontSize.2);
+}
+:where(p) {
+    max-inline-size: theme(contentWidth.3);
+    line-height: theme(lineHeight.3);
+}
+:where(h3, h4, h5, h6, dt) {
+    max-inline-size: theme(headerWidth.3);
+}
+:where(p, ul, ol, dl, h6) {
+    font-size: theme(fontSize.1);
+}
+:where(a[href]) {
+    color: var(--primary);
+}
+:where(a[href]):visited {
+    color: var(--secondary);
+}
+:where(a, u, ins, abbr) {
+    text-underline-offset: theme(textUnderlineOffset.4);
+    text-decoration: underline theme(textDecorationThickness.2);
+}
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+:where(a) {
+    margin-block: calc(theme(spacing.2xs) * -1);
+    margin-inline: calc(theme(spacing.2xs) * -1);
+    padding-block: theme(spacing.2xs);
+    padding-inline: theme(spacing.2xs);
+}
+:where(a):where([href]) {
+    text-decoration-color: var(--primary);
+}
+:where(a):where([href]):where(:visited) {
+    text-decoration-color: inherit;
+}
+:where(a):where(:not(:hover)) {
+    text-decoration: inherit;
+}
+:where(ol, ul) {
+    padding-inline-start: theme(spacing.xl);
+}
+:where(li) {
+    padding-inline-start: theme(spacing.3xs);
+}
+:where(li, dd, figcaption) {
+    max-inline-size: theme(contentWidth.2);
+}
+:where(blockquote, :not > cite) {
+    border-inline-start-width: theme(borderWidth.3);
+}
+:where(blockquote) {
+    display: grid;
+    gap: theme(spacing.m);
+    max-inline-size: theme(contentWidth.2);
+    padding-block: theme(spacing.s);
+    padding-inline: theme(spacing.m);
+}
+:where(:not(blockquote) > cite) {
+    padding-inline-start: theme(spacing.m);
+}
+:where(blockquote, q) {
+    font-style: italic;
+}
+:where(blockquote > footer) {
+    font-style: normal;
+    border: 0;
+}
+:where(blockquote cite) {
+    font-style: normal;
+}
+:where(address) {
+    font-style: normal;
+}
+:where(mark) {
+    border-radius: theme(borderRadius.DEFAULT);
+    padding-inline: theme(spacing.2xs);
+}
+:where(a[href^="mailto\:"])::before {
+    content: "📧 ";
+}
+:where(a[href^="tel\:"])::before {
+    content: "📞 ";
+}
+:where(a[href^="sms\:"])::before {
+    content: "💬 ";
+}
+
+/* CODE */
+:where(code, kbd, samp, pre) {
+    font-family: var(--font-mono);
+}
+:where(:not(pre) > code, kbd) {
+    white-space: nowrap;
+}
+:where(pre) {
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+}
+:where(:not(pre) > code) {
+    background-color: var(--surface-5);
+    border-radius: theme(borderRadius.md);
+    padding: 0.1rem theme(spacing.3xs);
+}
+:where(kbd, var) {
+    border-color: var(--on-surface);
+    border-radius: theme(borderRadius.md);
+    border-width: theme(borderWidth.2);
+    padding: theme(spacing.3xs) theme(spacing.2xs);
+}
+:where(pre code)::before {
+    content: none;
+}
+:where(pre code)::after {
+    content: none;
+}
+:where(code)::before {
+    content: "`";
+}
+:where(code)::after {
+    content: "`";
+}
+:where(a > code, a > strong) {
+    color: inherit;
+}
+
+/* ### FORMS ### */
+:where(input, textarea) {
+    padding-block: theme(spacing.3xs);
+    padding-inline: theme(spacing.2xs);
+}
+:where(select) {
+    padding-block: 0.75ch;
+    padding-inline: 1.25ch 0;
+}
+:where(textarea, select, input:not(button, button[type], input[type="button"], input[type="submit"], input[type="reset"])) {
+    background-color: var(--surface);
+    border-radius: theme(borderRadius.md);
+}
+:where(input[type="checkbox"], input[type="radio"]) {
+    block-size: theme(spacing.s);
+    inline-size: theme(spacing.s);
+}
+:where(textarea):not([cols]) {
+    width: 100%;
+}
+:where(textarea) {
+    resize: block;
+}
+:where(textarea):not([rows]) {
+    min-height: 40px;
+    height: 140px;
+}
+:where(select[multiple]) {
+    padding-inline-end: theme(spacing.m);
+    background-image: none;
+    overflow-y: auto;
+}
+:where(input[type="checkbox"]:active, input[type="radio"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, input[type="range"]:active, button:active) {
+    transform: translateY(2px);
+}
+input:disabled,
+select:disabled,
+button:disabled,
+textarea:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+/* ### BUTTONS ### */
+/* TODO */
+
+/* ### MISC ### */
+:where(svg) {
+    stroke: none;
+    fill: currentColor;
+}
+:where(svg):where(:not([fill])) {
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+:where(svg):where(:not([width])) {
+    inline-size: theme(spacing.3xl);
+}
+:where(dt, summary) {
+    font-weight: theme(fontWeight.bold);
+}
+:where(dt:not(:first-of-type)) {
+    margin-block-start: theme(spacing.m);
+}
+:where(small) {
+    font-size: max(0.5em, theme(fontSize.000));
+    max-inline-size: theme(contentWidth.1);
+}
+:where(hr) {
+    background-color: var(--surface-3);
+    height: theme(borderWidth.2);
+    margin-block: theme(spacing.2xl);
+}
+:where(figure) {
+    display: grid;
+    gap: theme(spacing.m);
+    place-items: center;
+}
+:where(figure) > :where(figcaption) {
+    font-size: theme(fontSize.0);
+}
+:where(summary) {
+    background: var(--surface-3);
+    border-radius: theme(borderRadius.md);
+    margin: calc(theme(spacing.s) * -1) calc(theme(spacing.m) * -1);
+    padding: theme(spacing.s) theme(spacing.m);
+}
+:where(details) {
+    background: var(--surface-2);
+    border-radius: theme(borderRadius.md);
+    padding-block: theme(spacing.s);
+    padding-inline: theme(spacing.m);
+}
+:where(details[open] > summary) {
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    margin-block-end: theme(spacing.l);
+}
+:where(fieldset) {
+    border: theme(borderWidth.2) solid var(--surface-4);
+    border-radius: theme(borderRadius.md);
+}
+:where(del) {
+    background: theme(colors.red.900);
+    color: theme(colors.red.200);
+}
+:where(ins) {
+    background: theme(colors.green.900);
+    color: theme(colors.green.100);
+}
+:where(abbr) {
+    text-decoration-color: theme(colors.blue.500);
+}
+:where(dialog) {
+    background-color: var(--surface-1);
+    border-radius: theme(borderRadius.md);
+    box-shadow: var(--shadow-6);
+    color: inherit;
+}
+@media (prefers-color-scheme: dark) {
+    :where(dialog) {
+        background-color: var(--surface-2);
+    }
+}
+:where(dialog)::backdrop {
+    backdrop-filter: blur(25px);
+}
+:where(html[\:has\(dialog\[open\]\)]) {
+    overflow: hidden;
+}
+:where(html:has(dialog[open])) {
+    overflow: hidden;
+}
+:where(menu) {
+    display: flex;
+    gap: theme(spacing.xs);
+    padding-inline-start: 0;
+}
+:focus-visible {
+    outline-color: var(--primary);
+}
