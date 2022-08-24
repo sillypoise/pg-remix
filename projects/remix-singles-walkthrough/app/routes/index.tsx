@@ -1,32 +1,38 @@
+import { Link } from "@remix-run/react";
+
 export default function Index() {
-  return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+    return (
+        <main>
+            <article className="stack">
+                <h1>Remix singles</h1>
+                <p>
+                    This is a project made to follow all the Remix Single's
+                    lessons in{" "}
+                    <a
+                        href="https://www.youtube.com/watch?v=jd_bin5HPrw&list=PLXoynULbYuEDG2wBFSZ66b85EIspy3fy6"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        this youtube playlist
+                    </a>
+                    from the Remix youtube channel
+                </p>
+                <p>We explore different lessons here:</p>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/newsletter-example">
+                                Newsletter Example (covers many things!)
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/loading-data">
+                                Loading data into components
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+            </article>
+        </main>
+    );
 }

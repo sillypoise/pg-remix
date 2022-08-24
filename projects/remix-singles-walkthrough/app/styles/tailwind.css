@@ -1202,3 +1202,99 @@ textarea:disabled {
   -webkit-margin-end: var(--icon-space, 0.5em);
           margin-inline-end: var(--icon-space, 0.5em)
 }
+
+.hidden {
+  display: none;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.bg-neutral-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
+.bg-green-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+
+.text-00 {
+  font-size: var(--step--1);
+}
+
+.text-0 {
+  font-size: var(--step-0);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.plb-3xl {
+  padding-block: var(--space-3xl);
+}
+
+.pbs-xl {
+  -webkit-padding-before: var(--space-xl);
+          padding-block-start: var(--space-xl);
+}
+
+.pbe-3xl {
+  -webkit-padding-after: var(--space-3xl);
+          padding-block-end: var(--space-3xl);
+}
+
+.\[--center-width\:20ch\] {
+  --center-width: 20ch;
+}
+
+.\[--center-padding\:theme\(spacing\.xl\)\] {
+  --center-padding: var(--space-xl);
+}
+
+.\[--center-width\:1000ch\] {
+  --center-width: 1000ch;
+}
+
+.\[--center-width\:theme\(contentWidth\.5\)\] {
+  --center-width: var(--content-width-5);
+}
+
+.\[--sidebar-width\:20\%\] {
+  --sidebar-width: 20%;
+}
+
+.\[--center-padding\:theme\(spacing\.s\)\] {
+  --center-padding: var(--space-s);
+}
+
+.\[--sidebar-width\:80\%\] {
+  --sidebar-width: 80%;
+}
+
+.\[--sidebar-width\:70\%\] {
+  --sidebar-width: 70%;
+}
+
+.\[--sidebar-width\:60\%\] {
+  --sidebar-width: 60%;
+}
+
+.\[--sidebar-width\:50\%\] {
+  --sidebar-width: 50%;
+}
+
+.\[--sidebar-width\:40\%\] {
+  --sidebar-width: 40%;
+}
