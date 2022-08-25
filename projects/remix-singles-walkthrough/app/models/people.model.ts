@@ -11,9 +11,13 @@ function addPerson(firstName: string, lastName: string) {
         "INSERT INTO people (firstName, lastName) VALUES (?, ?)"
     );
     let info = stmt.run(firstName, lastName);
-    console.log(info.changes);
-
     return info.changes;
 }
 
-export { addPerson, getPeople };
+function deletePerson(rowid: string) {
+    let stmt = db.prepare("DELETE FROM people WHERE rowid == ?");
+    let info = stmt.run(rowid);
+    return info.changes;
+}
+
+export { addPerson, getPeople, deletePerson };

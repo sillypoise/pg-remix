@@ -17,7 +17,7 @@ export default function Index() {
                     </a>
                     from the Remix youtube channel
                 </p>
-                <p>We explore different lessons here:</p>
+
                 <nav>
                     <ul>
                         <li>
@@ -28,6 +28,14 @@ export default function Index() {
                         <li>
                             <Link to="/loading-data">
                                 Loading data into components
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/data-mutation">Data mutations</Link>
+                        </li>
+                        <li>
+                            <Link to="/multiple-forms-and-single-button-mutations">
+                                Multiple Forms and Single Button Mutations
                             </Link>
                         </li>
                     </ul>

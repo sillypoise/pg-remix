@@ -1,22 +1,18 @@
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
-import { Form, Link, useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 
-import { getPeople, addPerson } from "~/models/loading-data.model";
+import { getPeople, addPerson } from "~/models/people.model";
 
 export let loader: LoaderFunction = async () => {
-    // TODO: Doesn't hurt to add a try/catch here as well
-    let people = getPeople();
-    return people;
-};
-
-export let action: ActionFunction = async ({ request }) => {
-    // TODO: Always add a try/catch in handlers
-    let formData = await request.formData();
-    let { firstName, lastName } = Object.fromEntries(formData);
-    if (typeof firstName === "string" && typeof lastName === "string") {
-        addPerson(firstName, lastName);
+    try {
+        let people = getPeople();
+        return people;
+    } catch (e) {
+        return {
+            errror: "Failed to load data",
+            message: "Something happened, we couldn't grab the people list",
+        };
     }
-    return {};
 };
 
 export default function LoadingData() {
@@ -24,9 +20,9 @@ export default function LoadingData() {
 
     return (
         <main>
+            <Link to="/">Back 🏠</Link>
             <article className="stack">
                 <h2>Loading Data into Components</h2>
-                <Link to="/">Back 🏠</Link>
                 <p>
                     Getting server data into your React components. Such a pain
                     in the butt. React Query, RTK Query and SWR are all great
@@ -57,7 +53,7 @@ export default function LoadingData() {
                     <strong>Note</strong> that inside the <code>loader</code> we
                     can do anything we want to fetch data. We can call different
                     APIs, aggregate and model our data before sending it, or any
-                    response you'd like
+                    response you'd like.
                 </p>
                 <div className="box rounded-md">
                     <article className="stack">
@@ -72,17 +68,6 @@ export default function LoadingData() {
                         ) : (
                             <p>No one's knocking at the door</p>
                         )}
-
-                        <Form
-                            className="stack [--stack-gap:theme(spacing.2xs)]"
-                            method="post"
-                        >
-                            <label htmlFor="firstName">First name</label>
-                            <input type="text" name="firstName" />
-                            <label htmlFor="lastName">Last Name</label>
-                            <input type="text" name="lastName" />
-                            <button type="submit">➕</button>
-                        </Form>
                     </article>
                 </div>
             </article>

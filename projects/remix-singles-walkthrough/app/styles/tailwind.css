@@ -1203,6 +1203,10 @@ textarea:disabled {
           margin-inline-end: var(--icon-space, 0.5em)
 }
 
+.inline {
+  display: inline;
+}
+
 .hidden {
   display: none;
 }
@@ -1214,6 +1218,10 @@ textarea:disabled {
 .bg-neutral-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .text-00 {
