@@ -38,6 +38,14 @@ export default function Index() {
                                 Multiple Forms and Single Button Mutations
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/pending-ui">Pending UI</Link>
+                        </li>
+                        <li>
+                            <Link to="/clearing-inputs-after-submissions ">
+                                Clearing inputs after submissions
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </article>
