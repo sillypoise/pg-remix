@@ -1,23 +1,22 @@
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData } from "@remix-run/react";
 
-import { db, getPeople } from "~/utils/db.server";
+import { getPeople, addPerson } from "~/models/loading-data.model";
 
 export let loader: LoaderFunction = async () => {
-    console.log(__dirname);
-    console.log(process.cwd());
+    // TODO: Doesn't hurt to add a try/catch here as well
     let people = getPeople();
-
     return people;
 };
 
 export let action: ActionFunction = async ({ request }) => {
+    // TODO: Always add a try/catch in handlers
     let formData = await request.formData();
-    let values = Object.fromEntries(formData);
-    // console.log("before", people);
-    // console.log("after", people);
-
-    return { sure: "man" };
+    let { firstName, lastName } = Object.fromEntries(formData);
+    if (typeof firstName === "string" && typeof lastName === "string") {
+        addPerson(firstName, lastName);
+    }
+    return {};
 };
 
 export default function LoadingData() {
@@ -65,7 +64,7 @@ export default function LoadingData() {
                         {people.length ? (
                             <ul className="stack">
                                 {people.map((person: any) => (
-                                    <li key={person.id}>
+                                    <li key={person.rowid}>
                                         {person.firstName} {person.lastName}
                                     </li>
                                 ))}
