@@ -1216,11 +1216,6 @@ textarea:disabled {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
-.bg-green-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
-}
-
 .text-00 {
   font-size: var(--step--1);
 }
@@ -1241,10 +1236,6 @@ textarea:disabled {
   transition-duration: 150ms;
 }
 
-.plb-3xl {
-  padding-block: var(--space-3xl);
-}
-
 .pbs-xl {
   -webkit-padding-before: var(--space-xl);
           padding-block-start: var(--space-xl);
@@ -1255,46 +1246,14 @@ textarea:disabled {
           padding-block-end: var(--space-3xl);
 }
 
-.\[--center-width\:20ch\] {
-  --center-width: 20ch;
-}
-
-.\[--center-padding\:theme\(spacing\.xl\)\] {
-  --center-padding: var(--space-xl);
-}
-
-.\[--center-width\:1000ch\] {
-  --center-width: 1000ch;
-}
-
 .\[--center-width\:theme\(contentWidth\.5\)\] {
   --center-width: var(--content-width-5);
-}
-
-.\[--sidebar-width\:20\%\] {
-  --sidebar-width: 20%;
 }
 
 .\[--center-padding\:theme\(spacing\.s\)\] {
   --center-padding: var(--space-s);
 }
 
-.\[--sidebar-width\:80\%\] {
-  --sidebar-width: 80%;
-}
-
-.\[--sidebar-width\:70\%\] {
-  --sidebar-width: 70%;
-}
-
-.\[--sidebar-width\:60\%\] {
-  --sidebar-width: 60%;
-}
-
-.\[--sidebar-width\:50\%\] {
-  --sidebar-width: 50%;
-}
-
-.\[--sidebar-width\:40\%\] {
-  --sidebar-width: 40%;
+.\[--stack-gap\:theme\(spacing\.2xs\)\] {
+  --stack-gap: var(--space-2xs);
 }

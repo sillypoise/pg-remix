@@ -1,14 +1,23 @@
-import type { LoaderFunction } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import type { ActionFunction, LoaderFunction } from "@remix-run/node";
+import { Form, Link, useLoaderData } from "@remix-run/react";
 
-export let loader: LoaderFunction = () => {
-    return [
-        {
-            id: 22,
-            first: "Jose",
-            last: "Rosas",
-        },
-    ];
+import { db, getPeople } from "~/utils/db.server";
+
+export let loader: LoaderFunction = async () => {
+    console.log(__dirname);
+    console.log(process.cwd());
+    let people = getPeople();
+
+    return people;
+};
+
+export let action: ActionFunction = async ({ request }) => {
+    let formData = await request.formData();
+    let values = Object.fromEntries(formData);
+    // console.log("before", people);
+    // console.log("after", people);
+
+    return { sure: "man" };
 };
 
 export default function LoadingData() {
@@ -53,11 +62,28 @@ export default function LoadingData() {
                 </p>
                 <div className="box rounded-md">
                     <article className="stack">
-                        {people.map((person: any) => (
-                            <li key={person.id}>
-                                {person.first} {person.last}
-                            </li>
-                        ))}
+                        {people.length ? (
+                            <ul className="stack">
+                                {people.map((person: any) => (
+                                    <li key={person.id}>
+                                        {person.firstName} {person.lastName}
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p>No one's knocking at the door</p>
+                        )}
+
+                        <Form
+                            className="stack [--stack-gap:theme(spacing.2xs)]"
+                            method="post"
+                        >
+                            <label htmlFor="firstName">First name</label>
+                            <input type="text" name="firstName" />
+                            <label htmlFor="lastName">Last Name</label>
+                            <input type="text" name="lastName" />
+                            <button type="submit">➕</button>
+                        </Form>
                     </article>
                 </div>
             </article>
