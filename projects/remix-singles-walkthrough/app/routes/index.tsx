@@ -42,8 +42,14 @@ export default function Index() {
                             <Link to="/pending-ui">Pending UI</Link>
                         </li>
                         <li>
-                            <Link to="/clearing-inputs-after-submissions ">
+                            <Link to="/clearing-inputs-after-submissions">
                                 Clearing inputs after submissions
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/concurrent-mutations-useFetcher">
+                                Concurrent mutations with{" "}
+                                <code>useFetcher</code>
                             </Link>
                         </li>
                     </ul>
