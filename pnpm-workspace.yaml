@@ -2,3 +2,4 @@ packages:
     - "projects/remix-singles-walkthrough/**"
     - "projects/remix-node/**"
     - "projects/remix-express/**"
+    - "projects/remix-fly/**"

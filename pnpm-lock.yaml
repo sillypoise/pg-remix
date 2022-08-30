@@ -52,6 +52,14 @@ importers:
       nodemon: 2.0.19
       npm-run-all: 4.1.5
 
+  projects/remix-fly:
+    specifiers:
+      '@remix-run/node': ^1.7.0
+      '@remix-run/serve': ^1.7.0
+    dependencies:
+      '@remix-run/node': 1.7.0
+      '@remix-run/serve': 1.7.0
+
   projects/remix-node:
     specifiers:
       '@remix-run/node': ^1.7.0
