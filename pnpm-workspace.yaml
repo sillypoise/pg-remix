@@ -4,3 +4,4 @@ packages:
     - "projects/remix-express/**"
     - "projects/remix-fly/**"
     - "projects/remix-cloudflare-pages/**"
+    - "projects/remix-netlify/**"

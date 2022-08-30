@@ -1,0 +1,20 @@
+{
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "build": "remix build",
+        "dev": "remix dev",
+        "start": "cross-env NODE_ENV=production netlify dev"
+    },
+    "dependencies": {
+        "@netlify/functions": "^1.0.0",
+        "@remix-run/netlify": "^1.7.0",
+        "@remix-run/node": "^1.7.0"
+    },
+    "devDependencies": {
+        "@remix-run/serve": "^1.7.0"
+    },
+    "engines": {
+        "node": ">=14"
+    }
+}
