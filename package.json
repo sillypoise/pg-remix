@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "@remix-run/react": "^1.6.8",
+        "cross-env": "^7.0.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
@@ -18,9 +19,9 @@
         "@types/react-dom": "^18.0.6",
         "eslint": "^8.20.0",
         "npm-run-all": "^4.1.5",
-        "typescript": "^4.7.4",
         "tailwindcss": "^3.1.8",
-        "tailwindcss-logical": "^3.0.0"
+        "tailwindcss-logical": "^3.0.0",
+        "typescript": "^4.7.4"
     },
     "keywords": [],
     "author": "",
