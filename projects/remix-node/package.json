@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "build": "remix build",
+        "dev": "remix dev",
+        "start": "remix-serve build"
+    },
+    "dependencies": {
+        "@remix-run/node": "^1.7.0",
+        "@remix-run/serve": "^1.7.0"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": ">=14"
+    }
+}

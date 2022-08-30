@@ -31,6 +31,14 @@ importers:
       tailwindcss-logical: 3.0.0
       typescript: 4.7.4
 
+  projects/remix-node:
+    specifiers:
+      '@remix-run/node': ^1.7.0
+      '@remix-run/serve': ^1.7.0
+    dependencies:
+      '@remix-run/node': 1.7.0
+      '@remix-run/serve': 1.7.0
+
   projects/remix-singles-walkthrough:
     specifiers:
       '@remix-run/node': ^1.6.8
@@ -1610,11 +1618,42 @@ packages:
       - react-dom
     dev: false
 
+  /@remix-run/express/1.7.0_express@4.18.1:
+    resolution: {integrity: sha512-g1hAb0R5OmioytTlvSz+IMzIUaZ5Me7aEeDL7sGrrm3MiUN+VHkWkjY/INXDA3pRyGHLJ8ITfnwDeXZyN/x1/A==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      express: ^4.17.1
+    dependencies:
+      '@remix-run/node': 1.7.0
+      express: 4.18.1
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
   /@remix-run/node/1.6.8:
     resolution: {integrity: sha512-+iq3l+VRlRWWZW9viNFKf1VGQeNUHdddH2Fvfd5DQ3p+/5A/0lVW87h99mn8UU6Qv6k27XOS1UcdRBgMfQNa8w==}
     engines: {node: '>=14'}
     dependencies:
       '@remix-run/server-runtime': 1.6.8
+      '@remix-run/web-fetch': 4.2.0
+      '@remix-run/web-file': 3.0.2
+      '@remix-run/web-stream': 1.0.3
+      '@web3-storage/multipart-parser': 1.0.0
+      abort-controller: 3.0.0
+      cookie-signature: 1.2.0
+      source-map-support: 0.5.21
+      stream-slice: 0.1.2
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
+  /@remix-run/node/1.7.0:
+    resolution: {integrity: sha512-zv27lye3UAS4gyUFlN9FLUGfYd6XwD/ZLnay6GBxyUK6SKS3/hbfkScb/bbhBrpCoh3KzPFcSP8Q/O2JDZR9aw==}
+    engines: {node: '>=14'}
+    dependencies:
+      '@remix-run/server-runtime': 1.7.0
       '@remix-run/web-fetch': 4.2.0
       '@remix-run/web-file': 3.0.2
       '@remix-run/web-stream': 1.0.3
@@ -1657,6 +1696,21 @@ packages:
       - supports-color
     dev: false
 
+  /@remix-run/serve/1.7.0:
+    resolution: {integrity: sha512-Fq7FYWdGxiu2GcJSsfF66BrsKgIfpu6T3rR3im/pGhT8VNSGn3AHjA7B5ohKcOOLS60jgk3zmv8FKoF2ZNRzjA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@remix-run/express': 1.7.0_express@4.18.1
+      compression: 1.7.4
+      express: 4.18.1
+      morgan: 1.10.0
+    transitivePeerDependencies:
+      - react
+      - react-dom
+      - supports-color
+    dev: false
+
   /@remix-run/server-runtime/1.6.8:
     resolution: {integrity: sha512-GLegRhNshF8fGRXzDNBxVfE66j1hj3IDH4CF4pWssBzzwIpV1peRw/dBunAu/l4KtpYfaLG6kcz6LPch4pBB9Q==}
     engines: {node: '>=14'}
@@ -1690,6 +1744,21 @@ packages:
       set-cookie-parser: 2.5.1
       source-map: 0.7.4
     dev: true
+
+  /@remix-run/server-runtime/1.7.0:
+    resolution: {integrity: sha512-xP/422QACVA6wtnsbTXKABUqKtyMguST+vzJDjKbxVyk8/3k9La8OpF5NF4ovtLhLf0V6gus6WaR86k+HyC9Hg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@types/cookie': 0.4.1
+      '@web3-storage/multipart-parser': 1.0.0
+      cookie: 0.4.2
+      react-router-dom: 6.3.0
+      set-cookie-parser: 2.5.1
+      source-map: 0.7.4
+    dev: false
 
   /@remix-run/web-blob/3.0.4:
     resolution: {integrity: sha512-AfegzZvSSDc+LwnXV+SwROTrDtoLiPxeFW+jxgvtDAnkuCX1rrzmVJ6CzqZ1Ai0bVfmJadkG5GxtAfYclpPmgw==}

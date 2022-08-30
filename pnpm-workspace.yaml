@@ -1,2 +1,3 @@
 packages:
     - "projects/remix-singles-walkthrough/**"
+    - "projects/remix-node/**"
