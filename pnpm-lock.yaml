@@ -73,6 +73,25 @@ importers:
       '@remix-run/node': 1.7.0
       '@remix-run/serve': 1.7.0
 
+  projects/remix-markdoc:
+    specifiers:
+      '@markdoc/markdoc': ^0.1.7
+      '@remix-run/express': ^1.7.0
+      '@remix-run/node': ^1.7.0
+      compression: ^1.7.4
+      express: ^4.18.1
+      morgan: ^1.10.0
+      nodemon: ^2.0.19
+    dependencies:
+      '@markdoc/markdoc': 0.1.7
+      '@remix-run/express': 1.7.0_express@4.18.1
+      '@remix-run/node': 1.7.0
+      compression: 1.7.4
+      express: 4.18.1
+      morgan: 1.10.0
+    devDependencies:
+      nodemon: 2.0.19
+
   projects/remix-netlify:
     specifiers:
       '@netlify/functions': ^1.0.0
@@ -1556,6 +1575,11 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /@markdoc/markdoc/0.1.7:
+    resolution: {integrity: sha512-Dz7+VP5I3m/DFpLnzjwvXv64XmneYNzy4adm5uJSkcAJxFlJujIn+hCmMh11k70w+y5Qu18sjngetpuP+3570g==}
+    engines: {node: '>=14.7.0'}
+    dev: false
 
   /@miniflare/cache/2.7.1:
     resolution: {integrity: sha512-QxN4yp8+cIlggbjIVP17xbSOjjJMco4coW5mXNPcTXazvqnbslwie9GDWmt4BkRvP77uwomf2CDUqEgxZC0frw==}
