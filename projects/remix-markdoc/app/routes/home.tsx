@@ -14,9 +14,24 @@ export default function Index() {
                     , pre-fetching
                 </li>
                 <li>
-                    <Link to="/test" prefetch="intent">
+                    <Link to="/test" prefetch="intent" title="❤️">
                         Cool new Remix link
                     </Link>
+                </li>
+                <li>
+                    <Link
+                        to="https://markdoc.dev/docs/nodes"
+                        prefetch="intent"
+                        reloadDocument
+                        title="❤️"
+                    >
+                        Cool new Remix linkink outside the page
+                    </Link>
+                </li>
+                <li>
+                    <a href="https://markdoc.dev/docs/nodes">
+                        Old plain link linking outside the page
+                    </a>
                 </li>
             </ul>
             <p>We will render some markdown in the outlet below</p>

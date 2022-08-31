@@ -25,13 +25,17 @@ Attention dwellers!
 Make sure you have everything you need
 {% /callout %}
 
-### Modify built-in nodes
+### Modify built-in nodes {% .color %}
 
-We can modify all headers.
+We can modify all headers. {% .color %}
 
 Or something more useful, like links!
 
-Let's test links: [docs](https://markdoc.dev/docs/nodes)
+Let's test links: [docs](https://markdoc.dev/docs/nodes "hello")
+
+Let's test a kewl Remix link that takes us to the [test page](/test)
+
+Let's test adding a prefetch option to the link. Also to the [test page](/test ":intent")
 `;
 
 export function loader() {
