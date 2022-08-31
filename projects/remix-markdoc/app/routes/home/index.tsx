@@ -25,9 +25,9 @@ Attention dwellers!
 Make sure you have everything you need
 {% /callout %}
 
-### Modify built-in nodes {% .color %}
+### Modify built-in nodes {% .test %}
 
-We can modify all headers. {% .color %}
+We can modify all headers. {% .test %}
 
 Or something more useful, like links!
 
@@ -36,6 +36,8 @@ Let's test links: [docs](https://markdoc.dev/docs/nodes "hello")
 Let's test a kewl Remix link that takes us to the [test page](/test)
 
 Let's test adding a prefetch option to the link. Also to the [test page](/test ":intent")
+
+Also testing if {% styledSpan .test %}custom React components style's can be overridden with class annotations {% /styledSpan %}
 `;
 
 export function loader() {

@@ -4,7 +4,7 @@ import * as nodes from "./nodes";
 // import { callout } from "./tags";
 
 function processMarkdown(markdown: string): RenderableTreeNodes {
-    console.dir(tags);
+    // console.dir(tags);
     // console.dir(callout);
 
     return transform(parse(markdown), { tags, nodes });
