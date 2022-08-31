@@ -15,7 +15,7 @@ function Callout({
                 border: "solid",
                 padding: "1rem",
                 backgroundColor: `${
-                    type === "caution" || type == "warning" ? "tomato" : ""
+                    type === "caution" || type == "warning" ? "tomato" : "none"
                 }`,
             }}
         >

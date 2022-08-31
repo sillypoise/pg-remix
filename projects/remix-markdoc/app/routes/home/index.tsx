@@ -6,6 +6,7 @@ let doc = `
 
 # Hello World
 
+
 We are rendering markdown server side thanks to Remix!
 
 - It seems to
@@ -14,7 +15,7 @@ We are rendering markdown server side thanks to Remix!
 
 This is a great authoring experience.
 
-Let's continue to enhance this.
+## Render React components with tags!
 
 {% callout type="warning" title="Danger ahead" %}
 Attention dwellers!
@@ -23,6 +24,12 @@ Attention dwellers!
 {% callout type="check" title="Pre-flight checks" %}
 Make sure you have everything you need
 {% /callout %}
+
+### Modify built-in nodes
+
+We can modify all headers.
+
+Or something more useful, like links!
 
 Let's test links: [docs](https://markdoc.dev/docs/nodes)
 `;
