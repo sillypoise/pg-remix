@@ -1,2 +1,2 @@
-export * from "./heading";
-export * from "./link";
+export * from "./heading.server";
+export * from "./link.server";
