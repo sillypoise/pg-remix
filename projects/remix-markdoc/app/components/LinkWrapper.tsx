@@ -7,6 +7,7 @@ function LinkWrapper({
     href,
     title,
     prefetch,
+    reloadDocument,
     target,
     ...props
 }: LinkProps & { href: string; title: string }) {
@@ -25,7 +26,7 @@ function LinkWrapper({
         );
     }
     return (
-        <Link to={to} prefetch={prefetch}>
+        <Link to={to} prefetch={prefetch} reloadDocument={reloadDocument}>
             {children}
         </Link>
     );

@@ -22,12 +22,18 @@ function parsePrefetch(attributes: any) {
     return prefetch.NONE;
 }
 
+function hasReloadDocument(attributes: any) {
+    if (!attributes.title) return false;
+    return attributes.title.includes("~");
+}
+
 const link: Schema = {
     render: "LinkWrapper",
     children: ["strong", "em", "s", "code", "text", "tag"],
     attributes: {
-        href: { type: Number, required: true, default: 1 },
+        href: { type: Number, required: true, default: "/" },
         title: { type: String },
+        reloadDocument: { type: Boolean, required: false, default: false },
     },
     transform(node, config) {
         let attributes = node.transformAttributes(config);
@@ -35,10 +41,11 @@ const link: Schema = {
 
         let to = attributes.href;
         let prefetch = parsePrefetch(attributes);
+        let reloadDocument = hasReloadDocument(attributes);
 
         return new Tag(
             "LinkWrapper",
-            { ...attributes, to, prefetch },
+            { ...attributes, to, prefetch, reloadDocument },
             children
         );
     },

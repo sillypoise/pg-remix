@@ -37,7 +37,25 @@ Let's test a kewl Remix link that takes us to the [test page](/test)
 
 Let's test adding a prefetch option to the link. Also to the [test page](/test ":intent")
 
+Let's add a \`reloadDocument\` to our fancy link. Test [this to force a \`POST\` request](/test ":intent") 
+
 Also testing if {% styledSpan .test %}custom React components style's can be overridden with class annotations {% /styledSpan %}
+
+{% Heading leve=2 %}
+Will this work? 
+{% /Heading %}
+`;
+
+let test = `
+# Testing
+
+[links](/test)
+
+{% Heading level=1 %}Another Test {% /Heading %}
+
+{% callout type="warning" title="Danger ahead" %}
+Attention dwellers!
+{% /callout %}
 `;
 
 export function loader() {
@@ -48,6 +66,6 @@ export function loader() {
 
 export default function Index() {
     let data = useLoaderData().content;
-
+    console.dir(data);
     return <Markdown content={data} />;
 }
