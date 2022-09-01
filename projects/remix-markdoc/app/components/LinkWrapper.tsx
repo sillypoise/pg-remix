@@ -1,5 +1,4 @@
 import { Link, type LinkProps } from "@remix-run/react";
-import React from "react";
 
 function LinkWrapper({
     children,
