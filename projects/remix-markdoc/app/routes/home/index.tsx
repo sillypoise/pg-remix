@@ -41,9 +41,13 @@ Let's add a \`reloadDocument\` to our fancy link. Test [this to force a \`POST\`
 
 Also testing if {% styledSpan .test %}custom React components style's can be overridden with class annotations {% /styledSpan %}
 
-{% Heading leve=2 %}
-Will this work? 
-{% /Heading %}
+
+## What about Katex?
+
+Inilne katex?
+
+You probably want to render Katex in a separate component. It's all server rendered anyways.
+
 `;
 
 let test = `
@@ -56,6 +60,10 @@ let test = `
 {% callout type="warning" title="Danger ahead" %}
 Attention dwellers!
 {% /callout %}
+
+
+
+
 `;
 
 export function loader() {
