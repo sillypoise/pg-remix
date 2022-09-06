@@ -7,11 +7,7 @@ export default function Index() {
             <p>We need to test links:</p>
             <ul>
                 <li>
-                    Plain old{" "}
-                    <a href="/test">
-                        <code>a</code> tag
-                    </a>
-                    , pre-fetching
+                    Plain old <a href="/test">a tag</a>, pre-fetching
                 </li>
                 <li>
                     <Link to="/test" prefetch="intent" title="❤️">

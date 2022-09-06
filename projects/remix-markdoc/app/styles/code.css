@@ -1,0 +1,56 @@
+code,
+kbd,
+samp,
+pre {
+    font-family: "Hasklig";
+    font-weight: 600;
+    font-size: 1rem;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 4;
+    text-align: left;
+    line-height: 1.4;
+    hyphens: none;
+}
+
+pre {
+    color: #ffffff;
+    background-color: hsl(220, 16%, 29%);
+    padding-block: 0.5em;
+    padding-inline: 1em;
+    border-radius: 0.5rem;
+}
+
+:not(pre) > code {
+    padding-block: 0.1em;
+    padding-inline: 0.2em;
+    border-radius: 0.5rem;
+}
+
+pre code::before {
+    content: none;
+}
+
+pre code::after {
+    content: none;
+}
+
+code::before {
+    content: "`";
+}
+
+code::after {
+    content: "`";
+}
+
+kbd,
+var {
+    padding-block: 0.01em;
+    padding-inline: 0.4em;
+    border: solid 2px;
+    border-radius: 0.5rem;
+}

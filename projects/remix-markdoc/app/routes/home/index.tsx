@@ -74,6 +74,6 @@ export function loader() {
 
 export default function Index() {
     let data = useLoaderData().content;
-    console.dir(data);
+    // console.dir(data);
     return <Markdown content={data} />;
 }
