@@ -10,3 +10,8 @@ a {
 .test {
     color: rgb(66, 163, 241);
 }
+
+.debug {
+    background-color: papayawhip;
+    color: darkslategray;
+}

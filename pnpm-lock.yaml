@@ -78,9 +78,11 @@ importers:
       '@markdoc/markdoc': ^0.1.7
       '@remix-run/express': ^1.7.0
       '@remix-run/node': ^1.7.0
+      '@types/js-yaml': ^4.0.5
       '@types/prismjs': ^1.26.0
       compression: ^1.7.4
       express: ^4.18.1
+      js-yaml: ^4.1.0
       morgan: ^1.10.0
       nodemon: ^2.0.19
       prismjs: ^1.29.0
@@ -90,9 +92,11 @@ importers:
       '@remix-run/node': 1.7.0
       compression: 1.7.4
       express: 4.18.1
+      js-yaml: 4.1.0
       morgan: 1.10.0
       prismjs: 1.29.0
     devDependencies:
+      '@types/js-yaml': 4.0.5
       '@types/prismjs': 1.26.0
       nodemon: 2.0.19
 
@@ -2208,6 +2212,10 @@ packages:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: true
 
+  /@types/js-yaml/4.0.5:
+    resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
+    dev: true
+
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
@@ -2549,7 +2557,6 @@ packages:
 
   /argparse/2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-    dev: true
 
   /aria-query/4.2.2:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
@@ -5168,7 +5175,6 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
-    dev: true
 
   /jscodeshift/0.13.1_@babel+preset-env@7.19.0:
     resolution: {integrity: sha512-lGyiEbGOvmMRKgWk4vf+lUrCWO/8YR8sUR3FKF1Cq5fovjZDlIcw3Hu5ppLHAnEXshVffvaM0eyuY/AbOeYpnQ==}
