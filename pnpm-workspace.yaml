@@ -6,3 +6,4 @@ packages:
     - "projects/remix-fly/**"
     - "projects/remix-cloudflare-pages/**"
     - "projects/remix-netlify/**"
+    - "projects/remix-routes/**"

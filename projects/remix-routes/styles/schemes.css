@@ -1,0 +1,71 @@
+/* COLOR SCHEMES */
+
+/* LIGHT SCHEME */
+:where(:root) {
+    --background: theme(colors.scheme.light.background);
+    --on-background: theme(colors.scheme.light.on-background);
+    /* --surface: theme(colors.scheme.light.surface);
+    --on-surface: theme(colors.scheme.light.on-surface);
+    --primary: theme(colors.scheme.light.primary);
+    --on-primary: theme(colors.scheme.light.on-primary);
+    --secondary: theme(colors.scheme.light.secondary);
+    --on-secondary: theme(colors.scheme.light.on-secondary);
+    --tertiary: theme(colors.scheme.light.tertiary);
+    --on-tertiary: theme(colors.scheme.light.on-tertiary); */
+}
+
+/* DARK SCHEME */
+@media (prefers-color-scheme: dark) {
+    :where(:root) {
+        --background: theme(colors.scheme.dark.background);
+        --on-background: theme(colors.scheme.dark.on-background);
+        /* --surface: theme(colors.scheme.dark.surface);
+        --on-surface: theme(colors.scheme.dark.on-surface);
+        --primary: theme(colors.scheme.dark.primary);
+        --on-primary: theme(colors.scheme.dark.on-primary);
+        --secondary: theme(colors.scheme.dark.secondary);
+        --on-secondary: theme(colors.scheme.dark.on-secondary);
+        --tertiary: theme(colors.scheme.dark.tertiary);
+        --on-tertiary: theme(colors.scheme.dark.on-tertiary); */
+    }
+}
+
+/* DATA CONTROLLED SCHEMES */
+[data-scheme="light"] {
+    --background: theme(colors.scheme.light.background);
+    --on-background: theme(colors.scheme.light.on-background);
+    /* --surface: theme(colors.scheme.light.surface);
+    --on-surface: theme(colors.scheme.light.on-surface);
+    --primary: theme(colors.scheme.light.primary);
+    --on-primary: theme(colors.scheme.light.on-primary);
+    --secondary: theme(colors.scheme.light.secondary);
+    --on-secondary: theme(colors.scheme.light.on-secondary);
+    --tertiary: theme(colors.scheme.light.tertiary);
+    --on-tertiary: theme(colors.scheme.light.on-tertiary); */
+}
+
+[data-scheme="dark"] {
+    --background: theme(colors.scheme.dark.background);
+    --on-background: theme(colors.scheme.dark.on-background);
+    /* --surface: theme(colors.scheme.dark.surface);
+    --on-surface: theme(colors.scheme.dark.on-surface);
+    --primary: theme(colors.scheme.dark.primary);
+    --on-primary: theme(colors.scheme.dark.on-primary);
+    --secondary: theme(colors.scheme.dark.secondary);
+    --on-secondary: theme(colors.scheme.dark.on-secondary);
+    --tertiary: theme(colors.scheme.dark.tertiary);
+    --on-tertiary: theme(colors.scheme.dark.on-tertiary); */
+}
+
+[data-scheme="nord"] {
+    /* --background: theme(colors.scheme.nord.background);
+    --on-background: theme(colors.scheme.nord.on-background); */
+    /* --surface: theme(colors.scheme.nord.surface);
+    --on-surface: theme(colors.scheme.nord.on-surface);
+    --primary: theme(colors.scheme.nord.primary);
+    --on-primary: theme(colors.scheme.nord.on-primary);
+    --secondary: theme(colors.scheme.nord.secondary);
+    --on-secondary: theme(colors.scheme.nord.on-secondary);
+    --tertiary: theme(colors.scheme.nord.tertiary);
+    --on-tertiary: theme(colors.scheme.nord.on-tertiary); */
+}
