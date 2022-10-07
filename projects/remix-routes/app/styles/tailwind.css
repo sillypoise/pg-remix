@@ -935,3 +935,21 @@ var {
   -webkit-margin-start: calc(50% - 50vw);
           margin-inline-start: calc(50% - 50vw);
 }
+
+/* ### DEBUG ### */
+
+.debug {
+  outline: var(--border-width-3) solid;
+  outline-offset: var(--space-2xs);
+  outline-color: var(--on-background);
+}
+
+.mbs-l {
+  -webkit-margin-before: var(--space-l);
+          margin-block-start: var(--space-l);
+}
+
+.mbs-2xl {
+  -webkit-margin-before: var(--space-2xl);
+          margin-block-start: var(--space-2xl);
+}

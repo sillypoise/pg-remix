@@ -6,4 +6,5 @@
 @import "./elems/code.css";
 @import "tailwindcss/components";
 @import "./layout.css";
+@import "./debug.css";
 @import "tailwindcss/utilities";

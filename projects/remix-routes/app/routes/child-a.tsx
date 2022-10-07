@@ -12,9 +12,9 @@ export default function Index() {
         parent: string;
         location: string;
     } = {
-        child: "default child",
+        child: "a child",
         parent: "root.tsx",
-        file: "@routes/index.tsx",
+        file: "@routes/child-a.tsx",
         location: useLocation().pathname,
     };
 
@@ -22,8 +22,8 @@ export default function Index() {
         <article className="center stack mbs-2xl | debug">
             <h2>{file}</h2>
             <p>
-                I am the <strong>{child}</strong> of <code>{parent}</code>{" "}
-                located at <code>{location}</code>
+                I am a <strong>{child}</strong> of <code>{parent}</code> located
+                at <code>{location}</code>
             </p>
         </article>
     );

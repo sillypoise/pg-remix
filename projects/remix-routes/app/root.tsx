@@ -32,7 +32,8 @@ export default function App() {
                 <Meta />
                 <Links />
             </head>
-            <body>
+            <body className="center mbs-l">
+                <h2 className="">@root</h2>
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />

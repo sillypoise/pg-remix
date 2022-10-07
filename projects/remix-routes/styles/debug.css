@@ -3,5 +3,5 @@
 .debug {
     outline: theme(borderWidth.3) solid;
     outline-offset: theme(spacing.2xs);
-    outline-color: var(on-background);
+    outline-color: var(--on-background);
 }
