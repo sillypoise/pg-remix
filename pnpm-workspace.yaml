@@ -1,9 +1,2 @@
 packages:
-    - "projects/remix-singles-walkthrough/**"
-    - "projects/remix-markdoc/**"
-    - "projects/remix-node/**"
-    - "projects/remix-express/**"
-    - "projects/remix-fly/**"
-    - "projects/remix-cloudflare-pages/**"
-    - "projects/remix-netlify/**"
-    - "projects/remix-routes/**"
+    - "projects/**"
