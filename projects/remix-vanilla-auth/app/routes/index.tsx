@@ -1,4 +1,6 @@
+import { LoaderArgs } from "@remix-run/node";
 import { Form } from "@remix-run/react";
+import { getSession } from "~/session";
 
 export default function Index() {
     return (
