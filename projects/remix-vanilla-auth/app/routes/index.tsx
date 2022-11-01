@@ -9,7 +9,7 @@ export async function loader({ request }: LoaderArgs) {
 
 export default function Index() {
     let { userSession } = useLoaderData();
-    console.log(userSession);
+    // console.log(userSession);
 
     return (
         <main className="mlb-l">
