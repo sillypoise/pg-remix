@@ -1,6 +1,11 @@
 import { json, LoaderArgs, redirect, type ActionArgs } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
-import { commitSession, destroySession, getSession } from "~/session.server";
+import {
+    commitSession,
+    createUserSession,
+    destroySession,
+    getSession,
+} from "~/session.server";
 
 // export async function action({ request }: ActionArgs) {
 //     let body = Object.fromEntries(new URLSearchParams(await request.text()));
@@ -37,8 +42,8 @@ export async function action({ request }: ActionArgs) {
 
     // Parse form data. Should only be set with credential validation
     //    let userExists = validateCredentials(username, password)
-    // let userExists = "alliiiive";
-    let userExists = null;
+    let userExists = true;
+    // let userExists = null;
 
     // Check for errors in incoming form data and set a flash error value into the session
     if (!userExists) {
@@ -52,10 +57,8 @@ export async function action({ request }: ActionArgs) {
         });
     }
 
-    // If we found no errors in incoming form data we SET the data we want into our session!
-    session.set("userExists", userExists);
-
-    // Login succeeded, let's set the cookie with its new values and let's redirect them to '/secret'
+    // return createUserSession(userExists, "/secret");
+    session.set("userId", "whatevah");
     return redirect("/secret", {
         headers: {
             "Set-Cookie": await commitSession(session),
@@ -66,7 +69,7 @@ export async function action({ request }: ActionArgs) {
 export async function loader({ request }: LoaderArgs) {
     let session = await getSession(request.headers.get("Cookie"));
 
-    if (session.has("userExists")) {
+    if (session.has("userId")) {
         return redirect("/secret");
     }
 

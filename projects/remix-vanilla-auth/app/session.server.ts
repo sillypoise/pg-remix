@@ -17,10 +17,35 @@ if (!COOKIE_SECRET) {
 let { getSession, commitSession, destroySession } = createCookieSessionStorage({
     cookie: {
         name: "zesh",
-        secrets: [COOKIE_SECRET],
+        // secrets: [COOKIE_SECRET],
         sameSite: "lax",
     },
 });
+
+// * Let's create a few helper functions
+async function createUserSession(userId: string, redirectTo: string) {
+    let session = await getSession();
+    session.set("userId", userId);
+    return redirect(redirectTo, {
+        headers: {
+            "Set-Cookie": await commitSession(session),
+        },
+    });
+}
+
+async function requireUserSession(
+    request: Request,
+    next: (session: string) => ReturnType<LoaderFunction>
+) {
+    let session = await getSession(request.headers.get("Cookie"));
+    let userSession = session.get("userId");
+    // No session, back to login you go
+    if (!userSession) {
+        return redirect("/login");
+    }
+    // We have a session, run the callback response with custom logic, e.g. call db with session id
+    return next(userSession);
+}
 
 // *
 async function getUserSession() {
@@ -30,7 +55,7 @@ async function getUserSession() {
 
 // * This function will guard routes that need authentication. If there is a session it will run the callback function, else it will re-direct to `/login`
 
-export function requireUserSession(
+export function requiresUserSession(
     request: Request,
     next: (session: UserSession) => ReturnType<LoaderFunction>
 ) {
@@ -42,4 +67,11 @@ export function requireUserSession(
     return next(session);
 }
 
-export { getSession, commitSession, destroySession, getUserSession };
+export {
+    getSession,
+    commitSession,
+    destroySession,
+    getUserSession,
+    requireUserSession,
+    createUserSession,
+};
