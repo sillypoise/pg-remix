@@ -1,41 +1,16 @@
-import { json, LoaderArgs, redirect, type ActionArgs } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
 import {
-    commitSession,
-    createUserSession,
-    destroySession,
-    getSession,
-} from "~/session.server";
+    json,
+    type LoaderArgs,
+    redirect,
+    type ActionArgs,
+} from "@remix-run/node";
+import { Form, useLoaderData } from "@remix-run/react";
+import { commitSession, getSession } from "~/session.server";
 
-// export async function action({ request }: ActionArgs) {
-//     let body = Object.fromEntries(new URLSearchParams(await request.text()));
-//     let errors = [];
-
-//     if (!body["login:email"]) {
-//         errors.push({
-//             field: "email",
-//             message: "email is required",
-//         });
-//     }
-//     if (!body["login:password"]) {
-//         errors.push({
-//             field: "password",
-//             message: "password is required",
-//         });
-//     }
-
-//     let session = await getSession(request.headers.get("Cookie"));
-
-//     if (errors.length) {
-//         session.flash("errors", JSON.stringify(errors));
-//         return redirect("/login", {
-//             headers: {
-//                 "Set-Cookie": await commitSession(session),
-//             },
-//         });
-//     }
-//     return redirect("/");
-// }
+async function validateCredentials(email: string, password: string) {
+    if (email && password) return "12345";
+    return null;
+}
 
 export async function action({ request }: ActionArgs) {
     let session = await getSession(request.headers.get("Cookie"));
@@ -44,8 +19,29 @@ export async function action({ request }: ActionArgs) {
     let email = form.get("login:email");
     let password = form.get("login:password");
 
-    // let userId = await validateCredentials(email, password);
-    return { form: "Buya" };
+    // TODO replace validation with zod
+    if (typeof email !== "string" || typeof password !== "string")
+        return json({ formError: "form not submitted correctly" });
+
+    let userId = await validateCredentials(email, password);
+
+    if (!userId) {
+        session.flash("error", "Invalid username/password");
+        return redirect("/login", {
+            headers: {
+                "Set-Cookie": await commitSession(session),
+            },
+        });
+    }
+
+    // successful login, set session value, set session in cookie and redirect
+    session.set("userId", userId);
+
+    return redirect("/secret", {
+        headers: {
+            "Set-Cookie": await commitSession(session),
+        },
+    });
 }
 
 export async function loader({ request }: LoaderArgs) {
