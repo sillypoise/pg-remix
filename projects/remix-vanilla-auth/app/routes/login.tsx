@@ -40,30 +40,12 @@ import {
 export async function action({ request }: ActionArgs) {
     let session = await getSession(request.headers.get("Cookie"));
 
-    // Parse form data. Should only be set with credential validation
-    //    let userExists = validateCredentials(username, password)
-    let userExists = true;
-    // let userExists = null;
+    let form = await request.formData();
+    let email = form.get("login:email");
+    let password = form.get("login:password");
 
-    // Check for errors in incoming form data and set a flash error value into the session
-    if (!userExists) {
-        session.flash("error", "Invalid form data");
-
-        // also redirect to login page with error data
-        return redirect("/login", {
-            headers: {
-                "Set-Cookie": await commitSession(session),
-            },
-        });
-    }
-
-    // return createUserSession(userExists, "/secret");
-    session.set("userId", "whatevah");
-    return redirect("/secret", {
-        headers: {
-            "Set-Cookie": await commitSession(session),
-        },
-    });
+    // let userId = await validateCredentials(email, password);
+    return { form: "Buya" };
 }
 
 export async function loader({ request }: LoaderArgs) {
