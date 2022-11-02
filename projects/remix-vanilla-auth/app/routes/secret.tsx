@@ -1,10 +1,14 @@
 import { type LoaderArgs } from "@remix-run/node";
-import { requireUserSession } from "~/session";
+import { requireUserSession } from "~/session.server";
+
+// export function loader({ request }: LoaderArgs) {
+//     return requireUserSession(request, (session) => {
+//         return { lol: true };
+//     });
+// }
 
 export function loader({ request }: LoaderArgs) {
-    return requireUserSession(request, (session) => {
-        return { lol: true };
-    });
+    return {};
 }
 
 export default function Secret() {
