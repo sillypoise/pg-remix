@@ -34,7 +34,7 @@ async function createNewUser(email: string, password: string) {
             return { userId, userEmail };
         });
     } catch (error) {
-        console.log("DB ERROR", error);
+        return error;
     }
 }
 
