@@ -1,6 +1,6 @@
 import argon2 from "argon2";
 
-async function validateCredentials(hash: string, password: string) {
+async function validatePassword(hash: string, password: string) {
     try {
         if (await argon2.verify(hash, password)) {
             return true;
@@ -21,4 +21,4 @@ async function hashPassword(password: string) {
     }
 }
 
-export { hashPassword, validateCredentials };
+export { hashPassword, validatePassword };

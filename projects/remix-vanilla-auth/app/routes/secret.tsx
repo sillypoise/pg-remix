@@ -1,13 +1,10 @@
 import { type LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { getAllUsers } from "~/models/session.model.server";
 import { requireUserSession } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
     return requireUserSession(request, async (session) => {
-        let users = await getAllUsers();
-        console.dir(await users);
-        return { users };
+        return { session };
     });
 }
 

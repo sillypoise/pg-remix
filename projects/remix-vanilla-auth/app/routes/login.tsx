@@ -5,11 +5,23 @@ import {
     type ActionArgs,
 } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
+import { getHashByUserId, getUserByEmail } from "~/models/session.model.server";
+import { validatePassword } from "~/service/argon2.server";
 import { commitSession, getSession } from "~/session.server";
 
 async function validateCredentials(email: string, password: string) {
-    if (email && password) return "12345";
-    return null;
+    try {
+        let user = await getUserByEmail(email);
+        let hash = await getHashByUserId(user.user_id);
+
+        if (!user) throw new Error();
+        if (!hash) throw new Error();
+        validatePassword(hash, password);
+        if (!validatePassword) throw new Error();
+        return validatePassword;
+    } catch (error) {
+        console.log("Invalid username/password", error);
+    }
 }
 
 export async function action({ request }: ActionArgs) {
@@ -23,9 +35,9 @@ export async function action({ request }: ActionArgs) {
     if (typeof email !== "string" || typeof password !== "string")
         return json({ formError: "form not submitted correctly" });
 
-    let userId = await validateCredentials(email, password);
+    let validCredentials = await validateCredentials(email, password);
 
-    if (!userId) {
+    if (!validCredentials) {
         session.flash("error", "Invalid username/password");
         return redirect("/login", {
             headers: {
@@ -34,8 +46,8 @@ export async function action({ request }: ActionArgs) {
         });
     }
 
-    // successful login, set session value, set session in cookie and redirect
-    session.set("userId", userId);
+    let user = await getUserByEmail(email);
+    session.set("userId", user.user_id);
 
     return redirect("/secret", {
         headers: {

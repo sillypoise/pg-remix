@@ -38,4 +38,49 @@ async function createNewUser(email: string, password: string) {
     }
 }
 
-export { getAllUsers, createNewUser };
+async function getUserById(userId: string) {
+    try {
+        let user = await db.one(
+            `SELECT user_id, email FROM public.users WHERE user_id = $1`,
+            [userId]
+        );
+        if (!user) throw new Error();
+        return user;
+    } catch (error) {
+        console.log("can't find user");
+    }
+}
+
+async function getUserByEmail(email: string) {
+    try {
+        let user = await db.one(
+            `SELECT user_id, email FROM public.users WHERE email = $1`,
+            [email]
+        );
+        if (!user) throw new Error();
+        return user;
+    } catch (error) {
+        console.log("can't find user", error);
+    }
+}
+
+async function getHashByUserId(userId: string) {
+    try {
+        let hash = await db.one(
+            `SELECT password FROM public.passwords WHERE user_id = $1`,
+            [userId]
+        );
+        if (!hash) throw new Error();
+        return hash.password;
+    } catch (error) {
+        console.log("can't find hash");
+    }
+}
+
+export {
+    getAllUsers,
+    createNewUser,
+    getUserById,
+    getUserByEmail,
+    getHashByUserId,
+};

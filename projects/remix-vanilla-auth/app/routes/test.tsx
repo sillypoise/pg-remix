@@ -1,18 +1,16 @@
 import { json, type LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { createNewUser } from "~/models/session.model.server";
+import {
+    createNewUser,
+    getHashByUserId,
+    getUserById,
+} from "~/models/session.model.server";
 import { hashPassword } from "~/service/argon2.server";
 import { requireUserSession } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
-    let email = "buyga@email.com";
-    let password = "fufah";
-    return requireUserSession(request, async (session) => {
-        let hash = await hashPassword(password);
-        let newUser = await createNewUser(email, hash!);
-        console.dir(newUser);
-        return json(newUser);
-    });
+    let hash = await getHashByUserId("19154a61-10a8-470a-9a3f-c25e468b88a1");
+    return json(hash);
 }
 
 export default function Secret() {
