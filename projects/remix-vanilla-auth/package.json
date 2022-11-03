@@ -10,8 +10,9 @@
         "start": "remix-serve build",
         "generate:css": "tailwindcss -i ../../styles/tailwind.css -o ./app/styles/tailwind.css"
     },
-    "dependencies": {},
-    "devDependencies": {},
+    "dependencies": {
+        "pg-promise": "^10.12.1"
+    },
     "engines": {
         "node": ">=14"
     }

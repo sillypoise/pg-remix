@@ -13,6 +13,7 @@ async function validateCredentials(email: string, password: string) {
 }
 
 export async function action({ request }: ActionArgs) {
+    let errored = false;
     let session = await getSession(request.headers.get("Cookie"));
 
     let form = await request.formData();
