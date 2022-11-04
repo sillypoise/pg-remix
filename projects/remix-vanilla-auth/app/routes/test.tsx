@@ -1,5 +1,6 @@
 import { json, type LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { z } from "zod";
 import {
     createNewUser,
     getHashByUserId,
@@ -9,8 +10,15 @@ import { hashPassword } from "~/service/argon2.server";
 import { requireUserSession } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
-    let hash = await getHashByUserId("19154a61-10a8-470a-9a3f-c25e468b88a1");
-    return json(hash);
+    try {
+        // let email = "user@example.com";
+        let email = 123;
+        let test = z.string().parse(email);
+        console.dir(test);
+        return { hello: "world" };
+    } catch (error) {
+        return { error };
+    }
 }
 
 export default function Secret() {

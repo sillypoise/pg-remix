@@ -5,6 +5,7 @@ import {
     type ActionArgs,
 } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
+import { z } from "zod";
 import { getHashByUserId, getUserByEmail } from "~/models/session.model.server";
 import { validatePassword } from "~/service/argon2.server";
 import { commitSession, getSession } from "~/session.server";
@@ -16,44 +17,44 @@ async function validateCredentials(email: string, password: string) {
 
         if (!user) throw new Error();
         if (!hash) throw new Error();
-        validatePassword(hash, password);
-        if (!validatePassword) throw new Error();
-        return validatePassword;
+        let validPassword = validatePassword(hash, password);
+        if (!validPassword) throw new Error();
+        return validPassword;
     } catch (error) {
         console.log("Invalid username/password", error);
     }
 }
 
 export async function action({ request }: ActionArgs) {
-    let session = await getSession(request.headers.get("Cookie"));
+    try {
+        let session = await getSession(request.headers.get("Cookie"));
 
-    let form = await request.formData();
-    let email = form.get("login:email");
-    let password = form.get("login:password");
+        let form = await request.formData();
+        let email = z.string().parse(form.get("login:email"));
+        let password = z.string().parse(form.get("login:password"));
 
-    // TODO replace validation with zod
-    if (typeof email !== "string" || typeof password !== "string")
-        return json({ formError: "form not submitted correctly" });
+        let validCredentials = await validateCredentials(email, password);
 
-    let validCredentials = await validateCredentials(email, password);
+        if (!validCredentials) {
+            session.flash("error", "Invalid username/password");
+            return redirect("/login", {
+                headers: {
+                    "Set-Cookie": await commitSession(session),
+                },
+            });
+        }
 
-    if (!validCredentials) {
-        session.flash("error", "Invalid username/password");
-        return redirect("/login", {
+        let user = await getUserByEmail(email);
+        session.set("userId", user.user_id);
+
+        return redirect("/secret", {
             headers: {
                 "Set-Cookie": await commitSession(session),
             },
         });
+    } catch (error) {
+        return json({ error });
     }
-
-    let user = await getUserByEmail(email);
-    session.set("userId", user.user_id);
-
-    return redirect("/secret", {
-        headers: {
-            "Set-Cookie": await commitSession(session),
-        },
-    });
 }
 
 export async function loader({ request }: LoaderArgs) {
