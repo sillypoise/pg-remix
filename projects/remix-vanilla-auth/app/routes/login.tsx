@@ -4,7 +4,7 @@ import {
     redirect,
     type ActionArgs,
 } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Form, Link, useLoaderData } from "@remix-run/react";
 import { z } from "zod";
 import { getHashByUserId, getUserByEmail } from "~/models/session.model.server";
 import { validatePassword } from "~/service/argon2.server";
@@ -87,6 +87,10 @@ export default function LoginPage() {
                     <pre>{JSON.stringify(session, null, 4)}</pre>
                 </div>
                 <Login />
+                <p>No account yet? </p>
+                <button className="bg-scheme-dark-neutral-surface-4 p-2xs rounded-md max-is-max">
+                    <Link to="/signup">Join us!</Link>
+                </button>
             </article>
         </main>
     );
@@ -95,7 +99,7 @@ export default function LoginPage() {
 function Login() {
     return (
         <Form action="" method="post" className="stack">
-            <label htmlFor="login:email">Username:</label>
+            <label htmlFor="login:email">Email:</label>
             <input
                 type="email"
                 name="login:email"

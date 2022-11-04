@@ -4,6 +4,7 @@ import { requireUserSession } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
     return requireUserSession(request, async (session) => {
+        // custom logic
         return { session };
     });
 }

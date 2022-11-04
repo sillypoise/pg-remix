@@ -71,7 +71,7 @@ export async function loader({ request }: LoaderArgs) {
 export default function LoginPage() {
     return (
         <Form action="" method="post">
-            <label htmlFor="email">Username:</label>
+            <label htmlFor="email">Email:</label>
             <input
                 type="email"
                 name="email"
