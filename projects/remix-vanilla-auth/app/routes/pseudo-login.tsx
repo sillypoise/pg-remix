@@ -1,6 +1,12 @@
-import { ActionArgs, json, redirect, type LoaderArgs } from "@remix-run/node";
+import {
+    type ActionArgs,
+    json,
+    redirect,
+    type LoaderArgs,
+} from "@remix-run/node";
 import { Form } from "@remix-run/react";
 import { z } from "zod";
+import { getUserByEmail } from "~/models/session.model.server";
 import { commitSession, getSession } from "~/session.server";
 
 // runs on POST
@@ -13,8 +19,33 @@ export async function action({ request }: ActionArgs) {
         let form = await request.formData();
         let email = z.string().parse(form.get("email"));
         let password = z.string().parse(form.get("password"));
+
+        // check if credentials valid
+        let validCredentials = await validateCredentials(email, password);
+
+        // invalid: set flash cookie session with error and redirect to /login
+        if (!validCredentials) {
+            session.flash("error", "Invalid username/password");
+            return redirect("/login", {
+                headers: {
+                    "Set-Cookie": await commitSession(session),
+                },
+            });
+        }
+
+        // valid: get user_id with email, redirec to authorized resource and set cookie sesssion value with it
+        let user = await getUserByEmail(email);
+        session.set("userId", user.user_id);
+
+        return redirect("/secret", {
+            headers: {
+                "Set-Cookie": await commitSession(session),
+            },
+        });
     } catch (error) {
         console.log("Invalid username/password", error);
+        // return catched error
+        return json({ error });
     }
 }
 
@@ -48,7 +79,7 @@ export default function LoginPage() {
                 // required
                 placeholder="name@mail.com"
             />
-            <label htmlFor="signup:pw">Password</label>
+            <label htmlFor="password">Password</label>
             <input
                 type="password"
                 name="password"
@@ -58,4 +89,13 @@ export default function LoginPage() {
             <button type="submit">Login</button>
         </Form>
     );
+}
+
+async function validateCredentials(email: string, password: string) {
+    try {
+        if (false) throw new Error();
+        return true;
+    } catch (error) {
+        console.log(error);
+    }
 }

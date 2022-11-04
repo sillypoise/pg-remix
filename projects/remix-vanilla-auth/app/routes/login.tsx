@@ -104,7 +104,7 @@ function Login() {
                 placeholder="name@mail.com"
                 className="max-is-[20ch] rounded-md p-3xs"
             />
-            <label htmlFor="signup:pw">Password</label>
+            <label htmlFor="password">Password</label>
             <input
                 type="password"
                 name="login:password"

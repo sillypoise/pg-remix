@@ -17,8 +17,7 @@ if (!COOKIE_SECRET) {
 let { getSession, commitSession, destroySession } = createCookieSessionStorage({
     cookie: {
         name: "zesh",
-        // TODO Can't leave cookie without secret!
-        // secrets: [COOKIE_SECRET],
+        secrets: [COOKIE_SECRET],
         sameSite: "lax",
     },
 });
