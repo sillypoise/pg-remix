@@ -66,6 +66,7 @@ export default function App() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.65 }}
+                        className="mlb-l"
                     >
                         {outlet}
                     </motion.main>
