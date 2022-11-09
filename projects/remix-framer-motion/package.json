@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "build": "remix build",
+        "dev": "remix dev",
+        "start": "remix-serve build"
+    },
+    "dependencies": {
+        "@radix-ui/react-dialog": "^1.0.2",
+        "framer-motion": "^7.6.5"
+    },
+    "engines": {
+        "node": ">=14"
+    }
+}
