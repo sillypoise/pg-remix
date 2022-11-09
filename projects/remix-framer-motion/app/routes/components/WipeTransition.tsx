@@ -7,25 +7,21 @@ import {
 } from "framer-motion";
 
 export default function WipeTransition() {
-    let location = useLocation();
     let isPresent = useIsPresent();
 
     return (
         <motion.div
-            key={location.key}
-            className="imposter inset-[0] transform-none bg-dark-tomato-8 z-10 cover"
+            className="imposter inset-[0] transform-none bg-dark-gray-11 z-10 cover"
             initial={{ scaleX: 1 }}
             animate={{
                 scaleX: 0,
-                transition: { duration: 0.5 },
+                transition: { duration: 0.5, ease: "circOut" },
             }}
             exit={{
                 scaleX: 1,
-                transition: { duration: 0.5 },
+                transition: { duration: 0.5, ease: "circIn" },
             }}
             style={{ originX: isPresent ? 0 : 1 }}
-        >
-            <h1>{isPresent ? "PRESENT" : "NOT PRESENT"}</h1>
-        </motion.div>
+        ></motion.div>
     );
 }
