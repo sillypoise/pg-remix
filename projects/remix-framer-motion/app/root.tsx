@@ -11,7 +11,12 @@ import {
     useLocation,
     useOutlet,
 } from "@remix-run/react";
-import { AnimatePresence, usePresence, motion } from "framer-motion";
+import {
+    AnimatePresence,
+    usePresence,
+    motion,
+    useIsPresent,
+} from "framer-motion";
 import { useEffect } from "react";
 import WipeTransition from "./routes/components/WipeTransition";
 
@@ -35,6 +40,9 @@ export function links() {
 export default function App() {
     let location = useLocation();
     let outlet = useOutlet();
+    let isPresent = useIsPresent();
+
+    console.log(isPresent);
 
     return (
         <html lang="en">
@@ -56,22 +64,14 @@ export default function App() {
                         </li>
                     </ul>
                 </nav>
-                <AnimatePresence mode="wait" initial={false}>
-                    <WipeTransition key={location.key} />
-                </AnimatePresence>
-                <AnimatePresence mode="wait" initial={false}>
-                    <motion.main
-                        key={location.key}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.65 }}
-                        className="mlb-l"
-                    >
-                        {outlet}
-                    </motion.main>
-                </AnimatePresence>
                 <ScrollRestoration />
+                {/* <AnimatePresence mode="wait" initial={false}>
+                    <WipeTransition key={location.key} />
+                </AnimatePresence> */}
+                {/* <AnimatePresence mode="wait" initial={false}> */}
+                {/* <Outlet /> */}
+                {outlet}
+                {/* </AnimatePresence> */}
                 <Scripts />
                 <LiveReload />
             </body>
