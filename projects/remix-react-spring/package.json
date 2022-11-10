@@ -1,0 +1,19 @@
+{
+    "name": "remix-react-spring",
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "dev": "run-p \"dev:*\"",
+        "build": "remix build",
+        "dev:remix": "remix dev",
+        "dev:css": "pnpm generate:css --watch",
+        "start": "remix-serve build",
+        "generate:css": "tailwindcss -i ./styles/tailwind.css -o ./app/styles/tailwind.css"
+    },
+    "dependencies": {
+        "@radix-ui/react-dialog": "^1.0.2"
+    },
+    "engines": {
+        "node": ">=14"
+    }
+}
