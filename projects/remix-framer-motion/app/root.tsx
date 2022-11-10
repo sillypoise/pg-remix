@@ -60,6 +60,9 @@ export default function App() {
                         <li>
                             <NavLink to="/b">B</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/menu">Nav animation</NavLink>
+                        </li>
                     </ul>
                 </nav>
                 <ScrollRestoration />
@@ -73,6 +76,7 @@ export default function App() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.65 }}
+                        className="mlb-l"
                     >
                         {outlet}
                     </motion.main>
