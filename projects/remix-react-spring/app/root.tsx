@@ -9,10 +9,15 @@ import {
     Scripts,
     ScrollRestoration,
     useLocation,
+    useMatches,
     useOutlet,
 } from "@remix-run/react";
 
-import { useEffect } from "react";
+import {
+    config,
+    useTransition as useSpringTransition,
+    animated,
+} from "react-spring";
 
 import tailwind from "./styles/tailwind.css";
 
@@ -34,6 +39,14 @@ export function links() {
 export default function App() {
     let location = useLocation();
     let outlet = useOutlet();
+    let matches = useMatches();
+    console.log(matches);
+
+    let transitions = useSpringTransition(location, {
+        from: { opacity: 0, width: "0%" },
+        enter: { opacity: 1, width: "100%" },
+        leave: { opacity: 0, width: "0%" },
+    });
 
     return (
         <html lang="en">

@@ -11,7 +11,8 @@
         "generate:css": "tailwindcss -i ./styles/tailwind.css -o ./app/styles/tailwind.css"
     },
     "dependencies": {
-        "@radix-ui/react-dialog": "^1.0.2"
+        "@radix-ui/react-dialog": "^1.0.2",
+        "react-spring": "^9.5.5"
     },
     "engines": {
         "node": ">=14"
