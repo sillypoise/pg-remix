@@ -10,6 +10,7 @@ import {
     ScrollRestoration,
     useLocation,
     useOutlet,
+    useTransition,
 } from "@remix-run/react";
 import {
     AnimatePresence,
@@ -40,9 +41,6 @@ export function links() {
 export default function App() {
     let location = useLocation();
     let outlet = useOutlet();
-    let isPresent = useIsPresent();
-
-    console.log(isPresent);
 
     return (
         <html lang="en">
@@ -65,13 +63,20 @@ export default function App() {
                     </ul>
                 </nav>
                 <ScrollRestoration />
-                {/* <AnimatePresence mode="wait" initial={false}>
+                <AnimatePresence mode="wait" initial={false}>
                     <WipeTransition key={location.key} />
-                </AnimatePresence> */}
-                {/* <AnimatePresence mode="wait" initial={false}> */}
-                {/* <Outlet /> */}
-                {outlet}
-                {/* </AnimatePresence> */}
+                </AnimatePresence>
+                <AnimatePresence mode="wait" initial={false}>
+                    <motion.main
+                        key={location.key}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.65 }}
+                    >
+                        {outlet}
+                    </motion.main>
+                </AnimatePresence>
                 <Scripts />
                 <LiveReload />
             </body>

@@ -1,5 +1,7 @@
-import { useLoaderData } from "@remix-run/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { ActionArgs } from "@remix-run/node";
+import { Form, Outlet, useActionData, useLoaderData } from "@remix-run/react";
+import { useState } from "react";
+
 export async function loader() {
     let data = await fetch(
         "https://jsonplaceholder.typicode.com/users?id=3"
@@ -9,20 +11,13 @@ export async function loader() {
 }
 
 export default function PageB() {
-    let { data } = useLoaderData();
+    let [data] = useState(useLoaderData());
+
     return (
-        <AnimatePresence mode="wait">
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className=""
-            >
-                <article className="center stack max-is-[50ch] cover">
-                    <h2 className="text-3">B</h2>
-                    <p>{JSON.stringify(data, null, 4)}</p>
-                </article>
-            </motion.div>
-        </AnimatePresence>
+        <article className="center stack max-is-[50ch] cover">
+            <h2 className="text-3">B</h2>
+            <p>{JSON.stringify(data, null, 4)}</p>
+            <Outlet />
+        </article>
     );
 }

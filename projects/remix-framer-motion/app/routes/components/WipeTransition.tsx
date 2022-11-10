@@ -1,10 +1,4 @@
-import { useLocation } from "@remix-run/react";
-import {
-    AnimatePresence,
-    motion,
-    useIsPresent,
-    usePresence,
-} from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
 
 export default function WipeTransition() {
     let isPresent = useIsPresent();
@@ -22,6 +16,6 @@ export default function WipeTransition() {
                 transition: { duration: 0.5, ease: "circIn" },
             }}
             style={{ originX: isPresent ? 0 : 1 }}
-        ></motion.div>
+        />
     );
 }
