@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "dev": "run-p \"dev:*\"",
+        "build": "remix build",
+        "dev:remix": "remix dev",
+        "dev:css": "pnpm generate:css --watch",
+        "start": "remix-serve build",
+        "generate:css": "tailwindcss -i ./styles/tailwind.css -o ./app/styles/tailwind.css"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "engines": {
+        "node": ">=14"
+    }
+}
