@@ -7,6 +7,9 @@ export default function Index() {
                 <h1 className="text-2">Remix + Ory Kratos</h1>
                 <ul>
                     <li>
+                        <Link to="/secret">Secret</Link>
+                    </li>
+                    <li>
                         <Link to="/registration">Registration</Link>
                     </li>
                 </ul>
