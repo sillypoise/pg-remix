@@ -148,6 +148,12 @@ importers:
       '@remix-run/node': 1.7.0
       '@remix-run/serve': 1.7.0
 
+  projects/remix-ory-kratos:
+    specifiers:
+      '@ory/client': ^1.1.0
+    dependencies:
+      '@ory/client': 1.1.0
+
   projects/remix-react-spring:
     specifiers:
       '@radix-ui/react-dialog': ^1.0.2
@@ -2276,6 +2282,14 @@ packages:
       - debug
     dev: true
 
+  /@ory/client/1.1.0:
+    resolution: {integrity: sha512-3yOD/0tX7oZQxtAiU8EHiU3VvzMZwXZmjbWMRAz38Ohc8OgrmX1PYubXSFCdyV1coNt5/YJ//+bA/FUk8JCJLA==}
+    dependencies:
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /@parcel/watcher/2.0.4:
     resolution: {integrity: sha512-cTDi+FUDBIUOBKEtj+nhiJ71AZVlkAsQFuGQTun5tV9mwQBQgZvhCzG+URPQc8myeN32yRVZEfVAPCs1RW+Jvg==}
     engines: {node: '>= 10.0.0'}
@@ -3940,6 +3954,14 @@ packages:
     resolution: {integrity: sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==}
     engines: {node: '>=4'}
     dev: true
+
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /axios/1.1.3:
     resolution: {integrity: sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==}
@@ -6063,7 +6085,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
