@@ -9,6 +9,7 @@ importers:
       '@remix-run/node': ^1.7.4
       '@remix-run/react': ^1.6.8
       '@remix-run/serve': ^1.7.4
+      '@types/node': ^18.11.15
       '@types/react': ^18.0.15
       '@types/react-dom': ^18.0.6
       cross-env: ^7.0.3
@@ -34,6 +35,7 @@ importers:
     devDependencies:
       '@remix-run/dev': 1.7.0_uroeops6y5plvzrhwx7fnuiija
       '@remix-run/eslint-config': 1.7.0_ehxjltspajcysklsgue4g44hsy
+      '@types/node': 18.11.15
       '@types/react': 18.0.18
       '@types/react-dom': 18.0.6
       eslint: 8.23.0
@@ -151,8 +153,13 @@ importers:
   projects/remix-ory-kratos:
     specifiers:
       '@ory/client': ^1.1.0
+      '@types/cookie': ^0.5.1
+      cookie: ^0.5.0
     dependencies:
       '@ory/client': 1.1.0
+      cookie: 0.5.0
+    devDependencies:
+      '@types/cookie': 0.5.1
 
   projects/remix-react-spring:
     specifiers:
@@ -3227,12 +3234,16 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.7.15
+      '@types/node': 18.11.15
       '@types/responselike': 1.0.0
     dev: true
 
   /@types/cookie/0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
+
+  /@types/cookie/0.5.1:
+    resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
@@ -3260,7 +3271,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.7.15
+      '@types/node': 18.11.15
     dev: true
 
   /@types/hast/2.3.4:
@@ -3288,7 +3299,7 @@ packages:
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.7.15
+      '@types/node': 18.11.15
     dev: true
 
   /@types/mdast/3.0.10:
@@ -3309,12 +3320,12 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
-  /@types/node/18.7.13:
-    resolution: {integrity: sha512-46yIhxSe5xEaJZXWdIBP7GU4HDTG8/eo0qd9atdiL+lFpA03y8KS+lkTN834TWJj5767GbWv4n/P6efyTFt1Dw==}
+  /@types/node/18.11.15:
+    resolution: {integrity: sha512-VkhBbVo2+2oozlkdHXLrb3zjsRkpdnaU2bXmX8Wgle3PUi569eLRaHGlgETQHR7lLL1w7GiG3h9SnePhxNDecw==}
     dev: true
 
-  /@types/node/18.7.15:
-    resolution: {integrity: sha512-XnjpaI8Bgc3eBag2Aw4t2Uj/49lLBSStHWfqKvIuXD7FIrZyMLWp8KuAFHAqxMZYTF9l08N1ctUn9YNybZJVmQ==}
+  /@types/node/18.7.13:
+    resolution: {integrity: sha512-46yIhxSe5xEaJZXWdIBP7GU4HDTG8/eo0qd9atdiL+lFpA03y8KS+lkTN834TWJj5767GbWv4n/P6efyTFt1Dw==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -3346,7 +3357,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.7.15
+      '@types/node': 18.11.15
     dev: true
 
   /@types/scheduler/0.16.2:
