@@ -1,12 +1,10 @@
-import { type ActionArgs, type LoaderArgs, redirect } from "@remix-run/node";
+import { type LoaderArgs, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { parse } from "cookie";
 
 const KRATOS_BASE_URL = process.env["KRATOS_PUBLIC_URL"];
 
 export async function loader({ request, params }: LoaderArgs) {
-    console.log(typeof request.headers);
-
     console.dir(request.headers, { depth: 2 });
 
     // mise-en-scene
