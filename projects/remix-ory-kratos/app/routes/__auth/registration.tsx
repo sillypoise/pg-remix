@@ -62,7 +62,6 @@ export default function Registration() {
             <article className="center stack">
                 <h1 className="text-3">Registration Route!</h1>
                 <p>Ory should redirect us here</p>
-                <pre>{JSON.stringify(ui, null, 4)}</pre>
                 <form action={ui.action} method={ui.method}>
                     <fieldset>
                         <fieldset className="stack items-start">
@@ -112,6 +111,7 @@ export default function Registration() {
                         </fieldset>
                     </fieldset>
                 </form>
+                <pre>{JSON.stringify(ui, null, 4)}</pre>
             </article>
         </main>
     );

@@ -57,7 +57,6 @@ export default function Login() {
             <article className="center stack">
                 <h1 className="text-3">Login Route!</h1>
                 <p>Implementing login with Ory</p>
-                <pre>{JSON.stringify(ui, null, 4)}</pre>
                 <form action={ui.action} method={ui.method}>
                     <fieldset className="stack items-start">
                         {ui.nodes.map((node) => {
@@ -131,6 +130,7 @@ export default function Login() {
                         })}
                     </fieldset>
                 </form>
+                <pre>{JSON.stringify(ui, null, 4)}</pre>
             </article>
         </main>
     );
