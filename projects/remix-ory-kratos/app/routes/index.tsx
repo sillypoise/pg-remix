@@ -21,6 +21,8 @@ export default function Index() {
                         <Link to="/login">Login</Link>
                     </li>
                 </ul>
+                <h3>who am i?</h3>
+                {/* <pre>{JSON.stringify()}</pre> */}
             </article>
         </main>
     );
