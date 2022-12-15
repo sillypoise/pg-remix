@@ -49,6 +49,9 @@ export default function Index() {
                         <Link to="/secret">Secret</Link>
                     </li>
                     <li>
+                        <Link to="/open-info">Open Info</Link>
+                    </li>
+                    <li>
                         <Link to="/registration">Registration</Link>
                     </li>
                     <li>
