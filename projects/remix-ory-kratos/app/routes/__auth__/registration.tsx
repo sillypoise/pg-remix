@@ -2,12 +2,9 @@ import { type LoaderArgs, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { parse } from "cookie";
 
-const KRATOS_BASE_URL = process.env["KRATOS_PUBLIC_URL"];
-
 export async function loader({ request, params }: LoaderArgs) {
-    console.dir(request.headers, { depth: 2 });
-
     // mise-en-scene
+    const KRATOS_BASE_URL = process.env["KRATOS_PUBLIC_URL"];
     const url = new URL(request.url);
     const cookies = request.headers.get("Cookie");
 
@@ -39,6 +36,7 @@ export async function loader({ request, params }: LoaderArgs) {
             );
             //! TODO: handle expired flow path
             let data = await resUi.json();
+            console.dir(data, { depth: 2 });
             return { ui: data.ui };
         }
     }
