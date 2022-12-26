@@ -1,0 +1,19 @@
+{
+    "name": "remix-s3",
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "build": "remix build",
+        "dev": "run-p \"dev:*\"",
+        "dev:remix": "remix dev",
+        "dev:css": "pnpm generate:css --watch",
+        "start": "remix-serve build",
+        "typecheck": "tsc -b",
+        "generate:css": "tailwindcss -i ../../styles/tailwind.css -o app/styles/tailwind.css"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "engines": {
+        "node": ">=14"
+    }
+}
