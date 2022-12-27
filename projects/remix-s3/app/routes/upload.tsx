@@ -15,13 +15,19 @@ import { useFetcher } from "@remix-run/react";
 import { PassThrough } from "stream";
 import { s3, s3UploadHandler, uploadStreamToS3 } from "~/utils/s3.server";
 
-export async function action({ request, context }: ActionArgs) {
-    function uploadHandler() {
-        return "zumba";
-    }
-    const formData = await parseMultipartFormData(request, uploadHandler);
+export async function action({ request }: ActionArgs) {
+    let contentType = request.headers.get("Content-Type") || "";
+    let [type, boundary] = contentType.split(/\s*;\s*boundary=/);
 
-    console.log(formData.get("img"));
+    let parts: AsyncIterable;
+
+    // console.log(request.body);
+    // function uploadHandler(info) {
+    //     console.log(info);
+    // }
+    // const formData = await parseMultipartFormData(request, uploadHandler);
+
+    // console.log(formData.get("img"));
     return {};
 }
 
