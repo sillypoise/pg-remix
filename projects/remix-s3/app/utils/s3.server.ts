@@ -3,7 +3,6 @@ import {
     PutObjectCommand,
     S3Client,
 } from "@aws-sdk/client-s3";
-import AWS from "aws-sdk";
 import {
     type UploadHandler,
     writeAsyncIterableToWritable,
@@ -18,7 +17,7 @@ if (!(R2_ENDPOINT && R2_ACCESS_KEY && R2_SECRET_KEY)) {
     throw new Error("Storage is missing required configuration");
 }
 
-const s3v3 = new S3Client({
+const S3 = new S3Client({
     region: "auto",
     endpoint: R2_ENDPOINT,
     credentials: {
@@ -58,4 +57,4 @@ const s3UploadHandler: UploadHandler = async ({
     return uploadedFileLocation;
 };
 
-export { s3v3, uploadStreamToS3, s3UploadHandler };
+export { S3, uploadStreamToS3, s3UploadHandler };
