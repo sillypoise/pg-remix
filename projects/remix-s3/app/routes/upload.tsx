@@ -16,7 +16,13 @@ import { PassThrough } from "stream";
 import { S3, s3UploadHandler, uploadStreamToS3 } from "~/utils/s3.server";
 
 export async function action({ request }: ActionArgs) {
-    console.log(await S3.send(new ListBucketsCommand("")));
+    // console.log(await S3.send(new ListBucketsCommand("")));
+    await S3.send(
+        new PutObjectCommand({
+            Bucket: "sagamedia",
+            Key: "test/file.png",
+        })
+    );
     return {};
 }
 
