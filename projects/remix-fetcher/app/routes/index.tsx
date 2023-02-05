@@ -97,7 +97,7 @@ function WithFetcherForm({ fetcher }: { fetcher: FetcherWithComponents<any> }) {
 function WithUseSubmit() {
     const submit = useSubmit();
 
-    //! Imperative submissions ΓåôΓåôΓåô
+    //! Imperative submissions ↓↓↓
     function handleSubmission(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         console.log("programatically submitting a form");

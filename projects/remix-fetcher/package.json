@@ -12,8 +12,9 @@
         "typecheck": "tsc",
         "generate:css": "tailwindcss -i ./styles/tailwind.css -o app/styles/tailwind.css"
     },
-    "dependencies": {},
-    "devDependencies": {},
+    "dependencies": {
+        "rsuite": "^5.26.0"
+    },
     "engines": {
         "node": ">=14"
     }
