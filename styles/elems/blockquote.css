@@ -1,0 +1,24 @@
+q::before {
+    content: none;
+}
+
+q::after {
+    content: none;
+}
+
+blockquote,
+q {
+    border-left: var(--border-width-3) solid var(--primary-border-0);
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    font-style: italic;
+}
+
+blockquote > footer {
+    font-style: normal;
+    border: 0;
+}
+
+blockquote cite {
+    font-style: normal;
+}

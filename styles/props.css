@@ -2,16 +2,16 @@
 :root {
     /* FLUID TYPE SCALE */
     /* 16-20_1.2-1.414 */
-    --step--2: clamp(0.63rem, calc(0.71rem + -0.1vw), 0.69rem);
-    --step--1: clamp(0.83rem, calc(0.82rem + 0.07vw), 0.88rem);
-    --step-0: clamp(1rem, calc(0.93rem + 0.36vw), 1.25rem);
-    --step-1: clamp(1.2rem, calc(1.04rem + 0.81vw), 1.77rem);
-    --step-2: clamp(1.44rem, calc(1.14rem + 1.51vw), 2.5rem);
-    --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.53rem);
-    --step-4: clamp(2.07rem, calc(1.24rem + 4.18vw), 5rem);
-    --step-5: clamp(2.49rem, calc(1.18rem + 6.54vw), 7.07rem);
-    --step-6: clamp(2.99rem, calc(0.98rem + 10.01vw), 9.99rem);
-    --step-7: clamp(3.58rem, calc(0.57rem + 15.06vw), 14.13rem);
+    --text-000: clamp(0.63rem, calc(0.71rem + -0.1vw), 0.69rem);
+    --text-00: clamp(0.83rem, calc(0.82rem + 0.07vw), 0.88rem);
+    --text-0: clamp(1rem, calc(0.93rem + 0.36vw), 1.25rem);
+    --text-1: clamp(1.2rem, calc(1.04rem + 0.81vw), 1.77rem);
+    --text-2: clamp(1.44rem, calc(1.14rem + 1.51vw), 2.5rem);
+    --text-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.53rem);
+    --text-4: clamp(2.07rem, calc(1.24rem + 4.18vw), 5rem);
+    --text-5: clamp(2.49rem, calc(1.18rem + 6.54vw), 7.07rem);
+    --text-6: clamp(2.99rem, calc(0.98rem + 10.01vw), 9.99rem);
+    --text-7: clamp(3.58rem, calc(0.57rem + 15.06vw), 14.13rem);
 }
 
 :root {
@@ -50,7 +50,7 @@
     --space-xs-m: clamp(0.75rem, calc(0.43rem + 1.61vw), 1.88rem);
     --space-s-l: clamp(1rem, calc(0.57rem + 2.14vw), 2.5rem);
     --space-m-xl: clamp(1.5rem, calc(0.86rem + 3.21vw), 3.75rem);
-    --space-l-xl: clamp(2rem, calc(1.5rem + 2.5vw), 3.75rem);
+    --space-l-2xl: clamp(2rem, calc(1.14rem + 4.29vw), 5rem);
     --space-xl-3xl: clamp(3rem, calc(1.71rem + 6.43vw), 7.5rem);
     --space-2xl-4xl: clamp(4rem, calc(2.29rem + 8.57vw), 10rem);
     --space-3xl-5xl: clamp(6rem, calc(3.43rem + 12.86vw), 15rem);
@@ -90,14 +90,16 @@
 /* TYPOGRAPHY */
 :where(html) {
     /* TYPOGRAPHY */
-    --font-sans: "Neue Haas Grotesk Text Pro", ui-sans-serif, system-ui,
-        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-        Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    /* TW: fontFamily */
+    --font-sans: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: "Tiempos Text", ui-serif, Georgia, Cambria, "Times New Roman",
         Times, serif;
     --font-mono: "Dank Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
         Consolas, "Liberation Mono", "Courier New", monospace;
+    /* TW: letterSpacing */
     --tracking-000: -0.075ch;
     --tracking-00: -0.05ch;
     --tracking-0: -0.025ch;
@@ -105,6 +107,7 @@
     --tracking-2: 0.025ch;
     --tracking-3: 0.05ch;
     --tracking-4: 0.1ch;
+    /* TW: lineHeight */
     --leading-00: 0.95;
     --leading-0: 1.1;
     --leading-1: 1.25;
@@ -112,25 +115,52 @@
     --leading-3: 1.5;
     --leading-4: 1.75;
     --leading-5: 2;
+    /* CUSTOM: contentWidth */
     --content-width-1: 20ch;
     --content-width-2: 45ch;
     --content-width-3: 60ch;
     --content-width-4: 65ch;
     --content-width-5: 70ch;
+    /* TW: fontWeight  */
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
 }
 
 /* UTILITY */
 :root {
-    /* BORDERS AND RADIUS */
+    /* TW: borderWidth */
+    --border-width: 0px;
     --border-width-1: 1px;
     --border-width-2: 2px;
-    --border-width-3: 5px;
-    --border-width-4: 10px;
-    --border-width-5: 25px;
+    --border-width-3: 4px;
+    --border-width-4: 8px;
+    --border-width-5: 16px;
+    /* TW: borderWidth */
+    --border-radius-none: 0px;
+    --border-radius-s: 0.125rem;
+    --border-radius: 0.25rem;
+    --border-radius-m: 0.375rem;
+    --border-radius-l: 0.5rem;
+    --border-radius-xl: 0.75rem;
+    --border-radius-2xl: 1rem;
+    --border-radius-3xl: 1.5rem;
+    --border-radius-full: 9999px;
 }
 
 :root {
     /* BREAKPOINTS */
     --breakpoint-md: 50em;
     --breakpoint-lg: 80em;
+}
+
+:root {
+    /* ANIMATIONS */
+    --animation-duration: 125ms;
 }

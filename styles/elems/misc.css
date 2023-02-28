@@ -1,0 +1,136 @@
+table {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    text-align: left;
+}
+
+td,
+th {
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+thead {
+    border-bottom: 1px solid var(--neutral-border-0);
+}
+
+tfoot {
+    border-top: 1px solid var(--neutral-border-0);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--neutral-surface-2);
+}
+
+tbody tr:nth-child(even) button {
+    background-color: var(--neutral-surface-1);
+}
+
+tbody tr:nth-child(even) button:hover {
+    background-color: var(--neutral-surface-2);
+}
+
+::-webkit-scrollbar {
+    height: 0.1em;
+    width: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--neutral-surface-4);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neutral-solid-1);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neutral-solid-0);
+}
+
+details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--neutral-surface-1);
+    padding: var(--space-xs-s);
+    padding-block-end: var(--space-2xs);
+    margin: 1em 0;
+    border-radius: var(--border-radius-m);
+    overflow: hidden;
+}
+
+details[open] {
+    padding: var(--space-xs-s);
+}
+
+details > :last-child {
+    margin-bottom: 0;
+}
+
+details[open] summary {
+    margin-bottom: var(--space-xs-s);
+}
+
+summary {
+    display: list-item;
+    background-color: var(--neutral-surface-2);
+    padding: var(--space-xs-s);
+    margin: calc(var(--space-xs-s) * -1) calc(var(--space-xs-s) * -1) 0;
+    cursor: pointer;
+    outline: none;
+}
+
+summary:hover,
+summary:focus {
+    text-decoration: underline;
+}
+
+details > :not(summary) {
+    margin-top: 0;
+}
+
+summary::-webkit-details-marker {
+    color: var(--neutral-on-surface-0);
+}
+
+dialog {
+    background-color: var(--neutral-surface-1);
+    color: var(--neutral-on-surface-0);
+    border: none;
+    border-radius: var(--border-radius-m);
+    border-color: var(--neutral-border-0);
+    padding: var(--space-2xs-xs) var(--space-s-m);
+}
+
+dialog > header:first-child {
+    background-color: var(--neutral-surface-2);
+    border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
+    margin: calc(var(--space-2xs-xs) * -1) calc(var(--space-s-m) * -1)
+        var(--space-2xs-xs);
+    padding: var(--space-2xs-xs);
+    text-align: center;
+}
+
+dialog::backdrop {
+    background: #0000009c;
+    backdrop-filter: blur(4px);
+}
+
+footer {
+    border-top: var(--boder-width-0) solid var(--neutral-border-0);
+    padding-top: var(--space-xs);
+    color: var(--neutral-on-surface-1);
+}
+
+body > footer {
+    margin-block-start: var(--space-l);
+}

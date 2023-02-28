@@ -1,11 +1,13 @@
 /* ### CODE ### */
+
 code,
 kbd,
 samp,
 pre {
-    font-family: theme(fontFamily.mono);
-    font-weight: theme(fontWeight.semibold);
-    font-size: theme(fontSize.0);
+    font-family: var(--font-mono);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-0);
+    font-size: 0.85em;
     max-inline-size: max-content;
     min-inline-size: 0;
     white-space: pre;
@@ -14,25 +16,30 @@ pre {
     word-wrap: normal;
     tab-size: 4;
     text-align: left;
-    line-height: theme(lineHeight.3);
+    line-height: var(--leading-3);
     hyphens: none;
-    overflow: auto;
+    overflow-x: auto;
 }
 
 pre {
     color: var(--code-on-surface, var(--neutral-on-surface-0));
     background-color: var(--code-surface, var(--neutral-surface-1));
-    padding-block: theme(spacing.xs-m);
-    padding-inline: theme(spacing.s-l);
-    border-radius: theme(borderRadius.lg);
+    /* font-weight: theme(fontWeight.light); */
+    padding-block: var(--space-xs-s);
+    padding-inline: var(--space-s-l);
+    border-radius: var(--border-radius-l);
+}
+
+pre > code {
+    font-weight: var(--font-light);
 }
 
 :not(pre) > code {
-    color: var(--on-background);
-    font-size: theme(fontSize.1);
+    color: var(--neutral-on-surface-0);
+    font-size: 0.85em;
     padding-block: 0.1em;
     padding-inline: 0.075em;
-    border-radius: theme(borderRadius.md);
+    border-radius: var(--border-radius-m);
 }
 
 pre code::before {
@@ -53,8 +60,11 @@ code::after {
 
 kbd,
 var {
-    padding-block: 0.01em;
-    padding-inline: 0.4em;
-    border: solid 2px;
-    border-radius: theme(borderRadius.md);
+    padding-block: 0.25em;
+    padding-inline: 0.5em;
+    margin-inline: 0.1em;
+    background: var(--neutral-surface-0);
+    border: var(--border-width-2) solid var(--neutral-border-0);
+    border-radius: var(--border-radius-s);
+    color: var(--neutral-on-surface-0);
 }

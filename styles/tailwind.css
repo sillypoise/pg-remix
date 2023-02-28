@@ -1,9 +1,14 @@
 @import "tailwindcss/base";
 @import "./props.css";
 @import "./reset.css";
+@import "./colors.css";
 @import "./schemes.css";
 @import "./base.css";
 @import "./elems/code.css";
+@import "./elems/forms.css";
+@import "./elems/misc.css";
+@import "./elems/blockquote.css";
+@import "./elems/range.css";
 @import "tailwindcss/components";
 @import "./layout.css";
 @import "./debug.css";

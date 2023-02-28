@@ -16,17 +16,17 @@
 /* ### THE CENTER ### */
 .center {
     box-sizing: content-box;
-    max-inline-size: var(--center-width, theme(contentWidth.4));
+    max-inline-size: var(--center-width, var(--content-width-4));
     margin-inline: auto;
     position: relative;
-    padding-inline: var(--center-padding, theme(spacing.s-l));
+    padding-inline: var(--center-padding, var(--space-s-l));
 }
 /* ### THE BOX ### */
 .box {
-    padding: theme(spacing.s-l);
-    border: theme(borderWidth.2) solid;
-    outline: theme(borderWidth.3) transparent;
-    outline-offset: calc(theme(borderWidth.3) * -1);
+    padding: var(--space-s-l);
+    border: var(--border-width-2) solid;
+    outline: var(--border-width-3) transparent;
+    outline-offset: calc(var(--border-width-3) * -1);
     color: var(--neutral-on-surface-0);
     background-color: var(--neutral-surface-0);
 }
@@ -41,10 +41,10 @@
 .sidebar {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--sidebar-gap, theme(spacing.s-l));
+    gap: var(--sidebar-gap, var(--space-s-l));
 }
 .sidebar > :first-child {
-    flex-basis: var(--sidebar-width, theme(spacing.5xl));
+    flex-basis: var(--sidebar-width, var(--space-5xl));
     flex-grow: 1;
 }
 .sidebar > :last-child {
@@ -59,14 +59,14 @@
 .cluster {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--cluster-gap, theme(spacing.s-l));
+    gap: var(--cluster-gap, var(--space-s-l));
     justify-content: var(--cluster-justify, start);
     align-items: var(--cluster-align, center);
 }
 /* ### THE GRID ### */
 .auto-grid {
     display: grid;
-    gap: var(--grid-gap, theme(spacing.s-l));
+    gap: var(--grid-gap, var(--space-s-l));
     grid-template-columns: repeat(
         var(--grid-placement, auto-fill),
         minmax(var(--grid-min-width, 16rem), 1fr)
@@ -88,7 +88,7 @@
 .switcher {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--switcher-gap, theme(spacing.s-l));
+    gap: var(--switcher-gap, var(--space-s-l));
 }
 .switcher > * {
     flex-grow: 1;
@@ -102,7 +102,7 @@
     padding: 0;
 }
 .cover > * {
-    margin-block: var(--cover-spacing, theme(spacing.xs-m));
+    margin-block: var(--cover-spacing, var(--space-xs-m));
 }
 .cover-target {
     margin-block: auto;
@@ -131,31 +131,31 @@
 /* ### THE REEL ### */
 .reel {
     display: flex;
-    gap: var(--reel-gap, theme(spacing.s-l));
+    gap: var(--reel-gap, var(--space-s-l));
     overflow-x: auto;
     overflow-y: hidden;
     block-size: auto;
-    border-width: var(--reel-border, theme(borderWidth.3));
+    border-width: var(--reel-border, var(--border-width-3));
 }
 .reel > img {
     block-size: 100%;
     width: auto;
 }
 .reel > * {
-    flex: 0 0 var(--reel-item-width, theme(spacing.5xl));
-    margin: var(--reel-item-margin, theme(spacing.s-l));
+    flex: 0 0 var(--reel-item-width, var(--space-5xl));
+    margin: var(--reel-item-margin, var(--space-s-l));
     margin-inline-end: 0;
 }
 .reel::after {
     content: "";
-    flex-basis: var(--reel-after-margin, theme(spacing.3xs));
+    flex-basis: var(--reel-after-margin, var(--space-3xs));
     flex-shrink: 0;
 }
 /* ### THE IMPOSTER ### */
 .imposter {
     position: var(--imposter-positioning, absolute);
-    inset-block-start: var(--imposter-inset-block, 50%);
-    inset-inline-start: var(--imposter-inset-inline, 50%);
+    inset-block-start: var(--imposter-block-start, 50%);
+    inset-inline-start: var(--imposter-inline-start, 50%);
     transform: translate(-50%, -50%);
 }
 .imposter-contained {
@@ -179,7 +179,7 @@
 }
 /* ### THE REGION ### */
 .region {
-    padding-block: var(--region-gap, theme(spacing.l-3xl));
+    padding-block: var(--region-gap, var(--space-l-3xl));
 }
 /* THE FULL BLEED */
 .full-bleed {

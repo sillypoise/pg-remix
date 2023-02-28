@@ -1,17 +1,17 @@
 /* ### DEBUG ### */
 
 .debug {
-    outline: theme(borderWidth.3) solid;
-    outline-offset: theme(spacing.2xs);
+    outline: var(--border-width-1) solid;
+    outline-offset: var(--debug-spacing, var(--space-2xs));
     outline-color: var(--debug-color, var(--neutral-on-surface-0));
 }
 .debug-r {
-    outline: theme(borderWidth.3) solid;
-    outline-offset: theme(spacing.2xs);
+    outline: var(--border-width-3) solid;
+    outline-offset: var(--space-2xs);
     outline-color: var(--debug-color, var(--neutral-on-surface-0));
 }
 .debug-r * {
-    outline: theme(borderWidth.2) solid;
-    outline-offset: theme(spacing.3xs);
+    outline: var(--border-width-2) solid;
+    outline-offset: var(--space-3xs);
     outline-color: var(--debug-color, var(--neutral-on-surface-0));
 }

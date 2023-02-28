@@ -1,53 +1,55 @@
 body {
     color: var(--neutral-on-surface-0);
     background: var(--neutral-surface-0);
-    font-size: theme(fontSize.1);
-    font-family: theme(fontFamily.sans);
-    line-height: theme(lineHeight.2);
-    letter-spacing: theme(letterSpacing.00);
+    font-size: var(--text-1);
+    font-family: var(--font-sans);
+    line-height: var(--leading-2);
+    word-wrap: break-word;
+    letter-spacing: var(--tracking-00);
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
 }
 
 h1,
 h2,
 h3 {
-    line-height: theme(lineHeight.0);
-    letter-spacing: theme(letterSpacing.000);
+    line-height: var(--leading-0);
+    letter-spacing: var(--tracking-000);
 }
 
 h1 {
-    font-size: theme(fontSize.5);
+    font-size: var(--text-5);
 }
 
 h2 {
-    font-size: theme(fontSize.4);
+    font-size: var(--text-4);
 }
 
 h3 {
-    font-size: theme(fontSize.3);
+    font-size: var(--text-3);
 }
 
 p,
 li,
 blockquote:not([class]) {
-    max-inline-size: theme(contentWidth.4);
+    max-inline-size: var(--content-width-4);
 }
 
 h1,
 h2,
 h3 {
-    max-inline-size: theme(contentWidth.1);
+    max-inline-size: var(--content-width-1);
 }
 
 blockquote:not([class]) {
-    font-family: theme(fontFamily.serif);
-    font-size: theme(fontSize.2);
+    font-family: var(--font-serif);
+    font-size: var(--text-2);
 }
 
 blockquote:not([class]) p:last-of-type {
-    font-family: theme(fontFamily.sans);
-    font-size: theme(fontSize.1);
-    font-weight: theme(fontWeight.normal);
+    font-family: var(--font-sans);
+    font-size: var(--text-1);
+    font-weight: var(--font-normal);
 }
 
 svg {
@@ -63,15 +65,45 @@ svg {
 /* Base interactive elements */
 
 a {
-    color: currentcolor;
+    text-decoration: none;
+    color: var(--primary-on-surface-1);
 }
 
 a:hover {
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-surface-4);
+}
+
+address {
+    font-style: normal;
+}
+
+:where(a[href^="mailto\:"])::before {
+    content: "📧 ";
+}
+
+:where(a[href^="tel\:"])::before {
+    content: "📞 ";
+}
+
+:where(a[href^="sms\:"])::before {
+    content: "💬 ";
+}
+
+mark {
+    background-color: var(--primary-solid-9);
+    border-radius: var(--border-radius-2);
+    padding: 0 0.2em 0 0.2em;
+    color: #000;
+}
+
+a > code,
+a > strong {
+    color: inherit;
 }
 
 :focus {
-    outline: 2px solid;
+    outline: var(--border-width-2) var(--primary-border-1);
     outline-offset: 0.3ch;
 }
 
@@ -86,4 +118,16 @@ main:focus {
 ::selection {
     color: var(--neutral-surface-0);
     background: var(--neutral-on-surface-0);
+}
+
+/* Base Animations */
+
+button,
+input,
+textarea {
+    transition: background-color var(--animation-duration) linear,
+        border-color var(--animation-duration) linear,
+        color var(--animation-duration) linear,
+        box-shadow var(--animation-duration) linear,
+        transform var(--animation-duration) ease;
 }
