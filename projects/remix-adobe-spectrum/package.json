@@ -1,0 +1,18 @@
+{
+  "name": "remix-adobe-spectrum",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "start": "remix-serve build",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@adobe/react-spectrum": "^3.26.0",
+    "@remix-run/css-bundle": "^1.15.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
